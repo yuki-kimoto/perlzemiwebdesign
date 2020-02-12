@@ -65,8 +65,8 @@
     margin-bottom:10px;
   }
   .entry li {
-    margin-left:25px;
     line-height:1.5;
+    list-style:none;
   }
   
   /* side */

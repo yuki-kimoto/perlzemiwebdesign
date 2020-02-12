@@ -6,7 +6,8 @@ HTML5とCSS3のフレックスレイアウトを使ったレイアウト入門�
 
 補助的な目標として、フレックスレイアウトのバグを踏む機能を使わないで、シンプルにデザインできることを目指します。フレックスレイアウトは、ブラウザ間のバグが多いので、それを踏まないようにします。
 
-利便性とポータビリティとシンプルさの最適なバランスが目標です。
+基本的な方針としては、幅を指定するときは常に、widthを使います。widthは、確定的に計算されるためでしょうか、ブラウザ間の互換性が高いです。calcの割り算は使いません。
+利便性と可読性とポータビリティとシンプルさの最適なバランスが目標です。
 
 <h3>divによるブロック要素の動作</h3>
 
@@ -187,91 +188,65 @@ width:100%;
 </div>
 </pre>
 
-<h3>子要素の長さを最大限まで自動拡張</h3>
+<h3>子要素の幅を設定する</h3>
 
-焼き鳥の部分を、最大限に広げてみましょう。「flex:1」を指定すると、子要素の長さが最大限に伸びます。
+焼肉の部分と、焼鳥の部分に長さを設定してみましょう。焼肉の幅は、100pxにして、焼鳥の幅は、それ以外とします。
 
 <div style="background:#fee;display:flex;">
-  <div style="background:red;">
+  <div style="background:red;width:100px;">
     焼肉<br>
     No. 1
   </div>
-  <div style="background:green;flex:1;">
+  <div style="background:green;width:calc(100% - 100px);">
     焼鳥
   </div>
 </div>
 
 <pre>
 <div style="background:#fee;display:flex;">
-  <div style="background:red;">
+  <div style="background:red;width:100px;">
     焼肉<br>
     No. 1
   </div>
-  <div style="background:green;flex:1;">
+  <div style="background:green;width:calc(100% - 100px);">
     焼鳥
   </div>
 </div>
 </pre>
 
-要素が他にもあるとどうなるでしょう? 自動的に計算されて、同じ横幅で、最大限に自動的に伸びます。
+要素が他にもあるとどうなるでしょう? 少し工夫がいります。要素が2個に増えたので、それぞれの数値を手動で、2で割ってあげましょう。
 
 <div style="background:#fee;display:flex;">
-  <div style="background:red;">
+  <div style="background:red;width:100px;">
     焼肉<br>
     No. 1
   </div>
-  <div style="background:green;flex:1;">
+  <div style="background:green;width:calc(50% - 50px);">
     焼鳥
   </div>
-  <div style="background:yellow;flex:1;">
+  <div style="background:yellow;width:calc(50% - 50px)">
     サラダ
   </div>
 </div>
 
 <pre>
 <div style="background:#fee;display:flex;">
-  <div style="background:red;">
+  <div style="background:red;width:100px;">
     焼肉<br>
     No. 1
   </div>
-  <div style="background:green;flex:1;">
+  <div style="background:green;width:calc(50% - 50px);">
     焼鳥
   </div>
-  <div style="background:yellow;flex:1;">
+  <div style="background:yellow;width:calc(50% - 50px)">
     サラダ
   </div>
 </div>
 </pre>
 
-焼肉 No.1の横幅を指定してみましょう。「width:150px」とします。焼き鳥とサラダの部分は、自動的に長さが最大まで伸びましたね。
+ちょっと待って、あれっ「flex:1」を使えばいいんでないの? もちろんそうです。でも「flex:1」には、ブラウザ間で、動作が異なることがあるので、この記事では、バグを踏まない方法を解説しています。
 
-<div style="background:#fee;display:flex;">
-  <div style="background:red;width:150px;">
-    焼肉<br>
-    No. 1
-  </div>
-  <div style="background:green;flex:1;">
-    焼鳥
-  </div>
-  <div style="background:yellow;flex:1;">
-    サラダ
-  </div>
-</div>
-
-<pre>
-<div style="background:#fee;display:flex;">
-  <div style="background:red;width:150px;">
-    焼肉<br>
-    No. 1
-  </div>
-  <div style="background:green;flex:1;">
-    焼鳥
-  </div>
-  <div style="background:yellow;flex:1;">
-    サラダ
-  </div>
-</div>
-</pre>
+あれ、calcで割り算するときに「/ 2」すればいいのでは? calcで割り算を使うのは、ブラウザ間で、動作が異なることがあるので、バグを踏まないようにしています。
 
 <h3>子要素を逆順にする</h3>
 
@@ -282,30 +257,32 @@ width:100%;
 逆順になりましたね。
 
 <div style="background:#fee;display:flex;flex-direction:row-reverse;">
-  <div style="background:red;">
+  <div style="background:red;width:100px;">
     焼肉<br>
     No. 1
   </div>
-  <div style="background:green;flex:1;">
+  <div style="background:green;width:calc(100% - 100px);">
     焼鳥
   </div>
 </div>
 
 <pre>
 <div style="background:#fee;display:flex;flex-direction:row-reverse;">
-  <div style="background:red;">
+  <div style="background:red;width:100px;">
     焼肉<br>
     No. 1
   </div>
-  <div style="background:green;flex:1;">
+  <div style="background:green;width:calc(100% - 100px);">
     焼鳥
   </div>
 </div>
 </pre>
 
+<h3>複数行のフレックスレイアウト</h3>
 
+複数行のフレックスレイアウトについては、以下の記事で解説しました。
 
-
+<a href="/blog/20200213070617.html">複数行のフレックスレイアウトをマスターする</a>
 
 <!--
 
@@ -334,5 +311,9 @@ IE11にバグがあります。
 <h4>flex-basisを使わない</h4>
 
 ブラウザ間、バグ多し。
+
+<h4>flex:1を使わない</h4>
+
+IE11でバグがあります。
 
 -->
