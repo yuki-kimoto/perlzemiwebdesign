@@ -1,0 +1,115 @@
+<h2>サイドバーを作成する - フレックスレイアウト・スマートフォン対応</h2>
+
+サイドバーを<a href="/blog/20200212090234.html">フレックスレイアウト</a>を使って作ってみます。CSSの切り替えだけで、スマートフォン対応ができます。IE11でも確認済み。
+
+<h3>サイドバー右、固定長、コンテンツ左、可変長、PC表示</h3>
+
+サイドバー右、固定長、コンテンツ左、可変長のPC表示です。フレックスレイアウトを使っています。コンテンツはcalcを使って、可変長の幅を計算しています。
+
+<div style="display:flex;">
+  <div style="width:calc(100% - 200px);background:pink;">
+    コンテンツ
+  </div>
+  <div style="width:200px;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+
+<pre>
+<div style="display:flex;">
+  <div style="width:calc(100% - 200px);background:pink;">
+    コンテンツ
+  </div>
+  <div style="width:200px;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+</pre>
+
+<h3>サイドバー左、固定長、コンテンツ右、可変長、PC表示</h3>
+
+サイドバー左、固定長、コンテンツ右、可変長のPC表示です。「flex-direction:row-reverse;」を使うと、左右の順番を入れ替えることができます。サイドバーを左に置く場合もで、SEO対策とスマートフォン対応を考えて、コンテンツを最初に記述するようにします。
+
+<div style="display:flex;flex-direction:row-reverse;">
+  <div style="width:calc(100% - 200px);background:pink;">
+    コンテンツ
+  </div>
+  <div style="width:200px;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+
+<pre>
+<div style="display:flex;flex-direction:row-reverse;">
+  <div style="width:calc(100% - 200px);background:pink;">
+    コンテンツ
+  </div>
+  <div style="width:200px;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+</pre>
+
+<h3>サイドバー下、コンテンツ上、スマートフォン表示</h3>
+
+サイドバー下、コンテンツ上、スマートフォン表示です。<a href="/blog/20200213070617.html">フレックスレイアウトで複数行表示</a>するので、「flex-wrap:wrap;」を追加して、サイドバーとコンテンツの幅を100%にします。
+
+<div style="display:flex;flex-wrap:wrap;">
+  <div style="width:100%;background:pink;">
+    コンテンツ
+  </div>
+  <div style="width:100%;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+
+<pre>
+<div style="display:flex;flex-wrap:wrap;">
+  <div style="width:100%;background:pink;">
+    コンテンツ
+  </div>
+  <div style="width:100%;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+</pre>
+
+<h3>サイドバー非表示、コンテンツだけ、スマートフォン表示</h3>
+
+サイドバー非表示、コンテンツだけ、スマートフォン表示です。サイドバーを「display:none;」で非表示にして、コンテンツの幅を100%にします。
+
+<div style="display:flex;">
+  <div style="width:100%;background:pink;">
+    コンテンツ
+  </div>
+  <div style="display:none;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+
+<pre>
+<div style="display:flex;">
+  <div style="width:100%;background:pink;">
+    コンテンツ
+  </div>
+  <div style="display:none;background:green;">
+    サイドバー<br>
+    アイテム1<br>
+    アイテム2
+  </div>
+</div>
+</pre>
