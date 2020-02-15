@@ -8,7 +8,7 @@
     -webkit-text-size-adjust:100%;
   }
   a, a:visited {
-    color:#0000EE;
+    color:#0066EE;
     text-decoration:none;
   }
   
@@ -83,8 +83,7 @@
     width:100%;
     font-size:28px;
     padding:19px 10px 15px 73px;
-    background:url(/images/giblog-logo.png) no-repeat 10px 15px;
-    background-size:48px;
+    background:url(/images/webdesign-logo.png) no-repeat 10px 15px;
   }
   h1 a, h1 a:visited {
     color:white;
@@ -102,8 +101,8 @@
   }
   h3 {
     font-size:20px;
-    border-top:4px solid #ddd;
-    padding:16px 0px 15px 18px;
+    border-top:4px solid #00AE50;
+    padding:13px 0px 12px 18px;
     letter-spacing:0.5px;
     margin:15px 0 10px 0;
     background:#F5F5F5;
@@ -173,7 +172,7 @@
     box-shadow: 0 0 3px rgba(0,0,0,.1);
   }
   .side-list-title {
-    background:#009D82;
+    background:#00AE50;
     color:white;
     font-weight:bold;
     padding: 12px 0px 10px 0px;
