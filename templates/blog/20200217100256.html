@@ -1,0 +1,97 @@
+<h2>PCで複数列の表、スマートフォンで一列の表を簡単に作る方法</h2>
+
+PCで複数列の表、スマートフォンで一列の表を簡単に作る方法を解説します。
+
+PC表示とスマフォ表示で、一番悩むのは、ボーダーのどこを消して、どこを表示すればよいかが非常にわかりにくいことです。
+
+これを短い記述で、簡単に行う方法を解説。項目数の、偶数・奇数を気にする必要もありません。
+
+<h3>PCにおける複数列表示</h3>
+
+PCにおけるボーダーありの複数列表示には、tableタグと「border-collapse: collapse;」を使います。「border-collapse: collapse;」は、隣接するボーダーを一つに結合してくれる機能です。tableの幅は、スマートフォン表示に対応するために、指定する必要があります。このサンプルでは100%にしています。
+
+<table style="border-collapse:collapse;width:100%;">
+  <tr>
+    <td style="border:1px solid orange;">項目1</td>
+    <td style="border:1px solid orange;">項目2</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid orange;">項目3</td>
+    <td style="border:1px solid orange;">項目4</td>
+  </tr>
+</table>
+
+<pre>
+<table style="border-collapse:collapse;width:100%;">
+  <tr>
+    <td style="border:1px solid orange;">項目1</td>
+    <td style="border:1px solid orange;">項目2</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid orange;">項目3</td>
+    <td style="border:1px solid orange;">項目4</td>
+  </tr>
+</table>
+</pre>
+
+<h3>スマートフォンにおける単数列表示</h3>
+
+スマートフォンにおける単数列表示をするには、まずtdタグを「display:block;」にします。するとtdのテーブルセルの機能が失われ単なるブロック要素になり、横幅は100%になります。「border-collapse: collapse;」の効果は失われ、ボーダーが二重に重なります。
+
+<table style="border-collapse:collapse;width:100%;">
+  <tr>
+    <td style="display:block;border:1px solid orange;">項目1</td>
+    <td style="display:block;border:1px solid orange;">項目2</td>
+  </tr>
+  <tr>
+    <td style="display:block;border:1px solid orange;">項目3</td>
+    <td style="display:block;border:1px solid orange;">項目4</td>
+  </tr>
+</table>
+
+<pre>
+<table style="border-collapse:collapse;width:100%;">
+  <tr>
+    <td style="display:block;border:1px solid orange;">項目1</td>
+    <td style="display:block;border:1px solid orange;">項目2</td>
+  </tr>
+  <tr>
+    <td style="display:block;border:1px solid orange;">項目3</td>
+    <td style="display:block;border:1px solid orange;">項目4</td>
+  </tr>
+</table>
+</pre>
+
+次に、tdタグの下のボーダーを削除し、tableタグの下側に下線を設定します。
+
+<table style="border-collapse:collapse;width:100%;border-bottom:1px solid orange;">
+  <tr>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目1</td>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目2</td>
+  </tr>
+  <tr>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目3</td>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目4</td>
+  </tr>
+</table>
+
+<pre>
+<table style="border-collapse:collapse;width:100%;border-bottom:1px solid orange;">
+  <tr>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目1</td>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目2</td>
+  </tr>
+  <tr>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目3</td>
+    <td style="display:block;border:1px solid orange;border-bottom:none;">項目4</td>
+  </tr>
+</table>
+</pre>
+
+<h3>tableタグはレスポンシブデザインでは使わないほうが良いのではないですか?</h3>
+
+tableタグはレスポンシブデザインでは使わないほうがいいのではないですか?
+
+はい、そのような考え方が存在します。
+
+一方で、PerlゼミのWebデザイン入門では、実際に短い文字数のHTMLとCSSで書け、複雑さを減らす方法を解説することを目標にしています。

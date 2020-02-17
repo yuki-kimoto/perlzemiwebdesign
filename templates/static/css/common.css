@@ -143,7 +143,6 @@
 
   table {
     border-collapse: collapse;
-    margin-left:15px;
   }
 
   table th {
@@ -208,7 +207,7 @@
   .entry {
     padding:0;
   }
-  h2, p, ul {
+  h2, p, ul, pre, table {
     width:calc(100% - 30px);
     margin-left:auto;
     margin-right:auto;
