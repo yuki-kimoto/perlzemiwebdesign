@@ -1,0 +1,227 @@
+<h2>商品カードを均等間隔に並べる方法</h2>
+
+商品カードを均等感覚に並べる方法を紹介します。商品をカードにして並べたいけど、左右を均等間隔に並べる簡単な方法ってあるの?
+
+フレックスレイアウトで、記述量が少なく、スマートフォン、IE11対応の方法。
+
+<h3>商品カードを均等間隔に並べる</h3>
+
+まず最初に、<a href="/blog/20200213070617.html">複数行のフレックスレイアウト</a>の設定をします。今回は、二列で並べましょう。
+
+<ul style="display:flex;flex-wrap:wrap;">
+  <li style="width:50%;border:1px solid green;">焼肉</li>
+  <li style="width:50%;border:1px solid green;">焼鳥</li>
+  <li style="width:50%;border:1px solid green;">サラダ</li>
+  <li style="width:50%;border:1px solid green;">お茶</li>
+</ul>
+
+<pre>
+<ul style="display:flex;flex-wrap:wrap;">
+  <li style="width:50%;border:1px solid green;">焼肉</li>
+  <li style="width:50%;border:1px solid green;">焼鳥</li>
+  <li style="width:50%;border:1px solid green;">サラダ</li>
+  <li style="width:50%;border:1px solid green;">お茶</li>
+</ul>
+</pre>
+
+<h4>左右のマージンを設定する</h4>
+
+カードの間と一番外枠のulの左右に10pxの均等間隔をとりたいとします。まず、外枠のulの左右に10pxを取りましょう。
+
+<ul style="display:flex;flex-wrap:wrap;width:calc(100% - 10px - 10px);margin-left:auto;margin-right:auto;">
+  <li style="width:50%;border:1px solid green;">焼肉</li>
+  <li style="width:50%;border:1px solid green;">焼鳥</li>
+  <li style="width:50%;border:1px solid green;">サラダ</li>
+  <li style="width:50%;border:1px solid green;">お茶</li>
+</ul>
+
+<pre>
+<ul style="display:flex;flex-wrap:wrap;width:calc(100% - 10px - 10px);margin-left:auto;margin-right:auto;">
+  <li style="width:50%;border:1px solid green;">焼肉</li>
+  <li style="width:50%;border:1px solid green;">焼鳥</li>
+  <li style="width:50%;border:1px solid green;">サラダ</li>
+  <li style="width:50%;border:1px solid green;">お茶</li>
+</ul>
+</pre>
+
+左右に10px空いたのを見てください。幅100%から左右の10pxずつを引きます。ulタグを中央に寄せるために、左右のマージンを自動「margin-left:auto;」「margin-right:auto;」に設定します。
+
+<h4>縦の要素間のマージンを設定する</h4>
+
+次に縦の要素間のマージンを設定しましょう。「margin-top:5px;」「margin-bottom:5px;」。フレックスレイアウトで複数行並べるときは、マージンは重ならないことに注意しましょう。
+
+<ul style="display:flex;flex-wrap:wrap;width:calc(100% - 10px - 10px);margin-left:auto;margin-right:auto;">
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">焼肉</li>
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">焼鳥</li>
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">サラダ</li>
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">お茶</li>
+</ul>
+
+<pre>
+<ul style="display:flex;flex-wrap:wrap;width:calc(100% - 10px - 10px);margin-left:auto;margin-right:auto;">
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">焼肉</li>
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">焼鳥</li>
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">サラダ</li>
+  <li style="width:50%;border:1px solid green;margin-top:5px;margin-bottom:5px;">お茶</li>
+</ul>
+</pre>
+
+<h4>要素間のマージンを設定する</h4>
+
+要素間のマージンを設定しましょう。1列目は、右側に10pxのマージンを取ります。列の幅が10px増えたので、それぞれの列の幅は、5pxづつ小さくします。
+
+<ul style="display:flex;flex-wrap:wrap;width:calc(100% - 10px - 10px);margin-left:auto;margin-right:auto;">
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;margin-right:10px;">焼肉</li>
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;">焼鳥</li>
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;margin-right:10px;">サラダ</li>
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;">お茶</li>
+</ul>
+
+<pre>
+<ul style="display:flex;flex-wrap:wrap;width:calc(100% - 10px - 10px);margin-left:auto;margin-right:auto;">
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;margin-right:10px;">焼肉</li>
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;">焼鳥</li>
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;margin-right:10px;">サラダ</li>
+  <li style="width:calc(50% - 5px);border:1px solid green;margin-top:5px;margin-bottom:5px;">お茶</li>
+</ul>
+</pre>
+
+これで完成です。
+
+<h3>商品カードを均等間隔に並べるサンプル</h3>
+
+商品カードを均等間隔に並べるサンプルです。
+
+<h4>商品カードを均等間隔に二列に並べる</h4>
+
+商品カードを均等間隔に並べる二列のサンプル。nth-childを使うときれいに書けます。2n + 1は、奇数番目のli要素です。
+
+<style>
+  .card_arrange_2column ul {
+    display:flex;
+    flex-wrap:wrap;
+    width:calc(100% - 10px - 10px);
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .card_arrange_2column li {
+    width:calc(50% - 5px);
+    border:1px solid green;
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+  .card_arrange_2column li:nth-child(2n + 1) {
+    margin-right:10px;
+  }
+</style>
+
+<div class="card_arrange_2column">
+  <ul>
+    <li>焼肉</li>
+    <li>焼鳥</li>
+    <li>サラダ</li>
+    <li>お茶</li>
+  </ul>
+</div>
+
+<pre>
+<style>
+  .card_arrange_2column ul {
+    display:flex;
+    flex-wrap:wrap;
+    width:calc(100% - 10px - 10px);
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .card_arrange_2column li {
+    width:calc(50% - 5px);
+    border:1px solid green;
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+  .card_arrange_2column li:nth-child(2n + 1) {
+    margin-right:10px;
+  }
+</style>
+
+<div class="card_arrange_2column">
+  <ul>
+    <li>焼肉</li>
+    <li>焼鳥</li>
+    <li>サラダ</li>
+    <li>お茶</li>
+  </ul>
+</div>
+</pre>
+
+<h4>商品カードを均等間隔に三列に並べる</h4>
+
+商品カードを均等間隔に三列に並べる参列のサンプル。nth-childを使うときれいに書けます。3n + 1は、1列目のli要素、3n + 2は、2列目の要素です。間隔は、割り切れるように、3pxの倍数を選びましょう。「33.4%」は、個別に設定しています。
+
+<style>
+  .card_arrange_3column ul {
+    display:flex;
+    flex-wrap:wrap;
+    width:calc(100% - 9px - 9px);
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .card_arrange_3column li {
+    width:calc(33.3% - 6px);
+    border:1px solid green;
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+  .card_arrange_3column li:nth-child(3n + 1) {
+    margin-right:9px;
+  }
+  .card_arrange_3column li:nth-child(3n + 2) {
+    margin-right:9px;
+  }
+</style>
+
+<div class="card_arrange_3column">
+  <ul>
+    <li>焼肉</li>
+    <li>焼鳥</li>
+    <li>サラダ</li>
+    <li>お茶</li>
+    <li>ポテト</li>
+    <li>スープ</li>
+  </ul>
+</div>
+
+<pre>
+<style>
+  .card_arrange_3column ul {
+    display:flex;
+    flex-wrap:wrap;
+    width:calc(100% - 9px - 9px);
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .card_arrange_3column li {
+    width:calc(33.3% - 6px);
+    border:1px solid green;
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+  .card_arrange_3column li:nth-child(3n + 1) {
+    margin-right:9px;
+  }
+  .card_arrange_3column li:nth-child(3n + 2) {
+    margin-right:9px;
+  }
+</style>
+
+<div class="card_arrange_3column">
+  <ul>
+    <li>焼肉</li>
+    <li>焼鳥</li>
+    <li>サラダ</li>
+    <li>お茶</li>
+    <li>ポテト</li>
+    <li>スープ</li>
+  </ul>
+</div>
+</pre>
