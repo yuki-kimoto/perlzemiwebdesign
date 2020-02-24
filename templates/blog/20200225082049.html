@@ -1,0 +1,27 @@
+<h2>iphone/safariで電話番号の文字が青くなってしまうのを解決</h2>
+
+iphone/safariで電話番号の文字が勝手に青くなってしまうのを解決するには、電話番号をaタグで囲んで、スタイルを設定します。
+
+<style>
+  .phone a {
+    color:orange;
+  }
+</style>
+
+<div class="phone">
+  <a>03-1234-5678</a>
+</div>
+
+<pre>
+<style>
+  .phone a {
+    color:orange;
+  }
+</style>
+
+<div class="phone">
+  <a>03-1234-5678</a>
+</div>
+</pre>
+
+iphone/safariは、電話番号の場合に、自動的にaタグを挿入するので、あらかじめaタグを挿入することで、これを防ぎます。
