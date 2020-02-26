@@ -1,0 +1,261 @@
+<h2>【HTML5】divタグ - ブロック要素の作成</h2>
+
+divタグを使うと、ブロック要素を作成できます。
+
+<div>
+  ブロック要素
+</div>
+
+<pre>
+<div>
+  ブロック要素
+</div>
+</pre>
+
+<h3>横100%の幅がブロック要素のデフォルト</h3>
+
+横100%の幅がブロック要素のデフォルトです。
+
+<div style="background:pink;">
+  ブロック要素
+</div>
+
+<pre>
+<div style="background:pink;">
+  ブロック要素
+</div>
+</pre>
+
+divでブロック要素を二つ配置してみましょう。横100%に伸びて、2行になります。
+
+<div style="background:pink;">
+  ブロック要素1
+</div>
+<div style="background:green">
+  ブロック要素2
+</div>
+
+<pre>
+<div style="background:pink;">
+  ブロック要素1
+</div>
+<div style="background:green;">
+  ブロック要素2
+</div>
+</pre>
+
+<h3>ブロック要素は、幅、高さ、上下のマージンを設定できる</h3>
+
+ブロック要素は、幅、高さ、上下のマージンを持つことができます。
+
+<div style="background:pink;magin-top:10px;margin-bottom:10px;width:80%;height:200px;">
+  ブロック要素1<br>
+  magin-top:10px;<br>
+  margin-bottom:10px;<br>
+  width:80%;<br>
+  height:200px;
+</div>
+<div style="background:green;">
+  ブロック要素2
+</div>
+
+<pre>
+<div style="background:pink;magin-top:10px;margin-bottom:10px;width:80%;height:300px;">
+  ブロック要素1
+</div>
+<div style="background:green;">
+  ブロック要素2
+</div>
+</pre>
+
+インラインブロック要素も、同じです。一方で、インライン要素は、幅、高さ、上下のマージンを設定することができません。
+
+マージンや高さや幅を設定したい場合は、インライン要素ではなく、ブロック要素かインラインブロック要素、フレックス要素を使います。
+
+<h3>ブロック要素を設定するCSS</h3>
+
+ブロック要素を設定するCSSは「display:要素の種類;」です。divタグのデフォルトは、ブロック要素ですが、変更することができます。
+
+<pre>
+<div style="display:block;">
+  ブロック要素
+</div>
+<div style="display:inline-block;">
+  インラインブロック要素
+</div>
+<div style="display:inline;">
+  インライン要素
+</div>
+<div style="display:flex;">
+  フレックス要素
+</div>
+</pre>
+
+<h3>divタグ以外のブロック要素</h3>
+
+divタグ以外でブロック要素になる、よく使うタグです。
+
+<ul class="list">
+  <li><a href="/blog/20200220091414.html">見出しタグ - h1, h2, h3, h4, h5, h6</a></li>
+  <li>pタグ</li>
+  <li>ulタグ</li>
+</ul>
+
+<h3>ブロック要素とインラインブロック要素とフレックス要素の使い分けは?</h3>
+
+ブロック要素とインラインブロック要素とフレックス要素の使い分けは?
+
+<h4>1行1列はブロック要素</h4>
+
+1行1列で表現できるときは、ブロック要素を使います。
+
+<div style="background:pink;">
+  ブロック要素1
+</div>
+
+<pre>
+<div style="background:pink;">
+  ブロック要素1
+</div>
+</pre>
+
+<h4>複数行1列はブロック要素</h4>
+
+複数行1列の場合も、ブロック要素を使います。
+
+<div style="background:pink;">
+  ブロック要素1
+</div>
+<div style="background:green">
+  ブロック要素2
+</div>
+
+<pre>
+<div style="background:pink;">
+  ブロック要素1
+</div>
+<div style="background:green;">
+  ブロック要素2
+</div>
+</pre>
+
+<h4>1行複数列はフレックス要素</h4>
+
+1行複数列の場合は、フレックス要素を使います。
+
+<div style="display:flex;">
+  <div style="width:50%;background:pink;">
+    列1
+  </div>
+  <div style="width:50%;background:green;">
+    列2
+  </div>
+</div>
+
+<pre>
+<div style="display:flex;">
+  <div style="width:50%;background:pink;">
+    列1
+  </div>
+  <div style="width:50%;background:green;">
+    列2
+  </div>
+</div>
+</pre>
+
+<a href="/blog/20200212090234.html">フレックスレイアウト入門</a>で詳しく解説。
+
+<h4>複数行複数列はフレックス要素</h4>
+
+複数行複数列の場合は、フレックス要素を使い「flex-wrap:wrap;」を指定します。
+
+<div style="display:flex;flex-wrap:wrap;">
+  <div style="width:50%;background:pink;">
+    行1列1
+  </div>
+  <div style="width:50%;background:green;">
+    行1列2
+  </div>
+  <div style="width:50%;background:blue;">
+    行2列1
+  </div>
+  <div style="width:50%;background:red;">
+    行2列2
+  </div>
+</div>
+
+<pre>
+<div style="display:flex;flex-wrap:wrap;">
+  <div style="width:50%;background:pink;">
+    行1列1
+  </div>
+  <div style="width:50%;background:green;">
+    行1列2
+  </div>
+  <div style="width:50%;background:blue;">
+    行2列1
+  </div>
+  <div style="width:50%;background:red;">
+    行2列2
+  </div>
+</div>
+</pre>
+
+<a href="/blog/20200213070617.html">フレックスレイアウトで複数行レイアウト</a>入門で詳しく解説。
+
+インラインブロック要素は、使う機会は少ないでしょう。
+
+<h3>divタグで、ボタンを作るには?</h3>
+
+divタグを使ってボタンを作るには、次のように考えます。
+
+・幅を決める
+・右マージンと左マージンを自動にすると、中央に寄る
+
+<h4>幅を決める</h4>
+
+まずボタンの幅を決めましょう。パソコン画面だと400px。スマートフォン画面だと「幅100%から、30px小さい」とします。
+
+<div style="width:400px;background:pink;">
+  PC用用ボタン
+</div>
+
+<pre>
+<div style="width:400px;background:pink;">
+  PC用用ボタン
+</div>
+</pre>
+
+<div style="width:calc(100% - 30px);background:pink;">
+  スマフォ用ボタン
+</div>
+
+<pre>
+<div style="width:calc(100% - 30px);background:pink;">
+  スマフォ用ボタン
+</div>
+</pre>
+
+<h4>左右のマージンを自動にする</h4>
+
+左右のマージンを自動にすると、ボタンが中央に寄ります。
+
+<div style="width:400px;margin-left:auto;margin-right:auto;background:pink;">
+  PC用用ボタン
+</div>
+
+<pre>
+<div style="width:400px;margin-left:auto;margin-right:auto;background:pink;">
+  PC用用ボタン
+</div>
+</pre>
+
+<div style="width:calc(100% - 30px);margin-left:auto;margin-right:auto;background:pink;">
+  スマフォ用ボタン
+</div>
+
+<pre>
+<div style="width:calc(100% - 30px);margin-left:auto;margin-right:auto;background:pink;">
+  スマフォ用ボタン
+</div>
+</pre>
