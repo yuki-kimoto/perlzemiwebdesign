@@ -1,0 +1,37 @@
+<h2>iphone/safariで、テキストフィールドやボタンのデフォルトデザインが適用されてしまうのを解決</h2>
+
+iphone/safariで、テキストフィールドやボタンのデフォルトデザインが適用されてしまうのを解決するには、「-webkit-appearance:none;」を指定します。
+
+「*」ですべての要素に設定しておくのが簡単でしょう。
+
+<pre>
+* {
+  -webkit-appearance:none;
+}
+</pre>
+
+<h4>指定なし</h4>
+
+iphone/safariでは、よく見るとうっすり薄い影のようなものがでていますでしょうか? これはiphone/safariのデフォルトデザインです。
+
+<div>
+  <input type="text" style="border:1px solid green;">
+</div>
+
+<pre>
+<div>
+  <input type="text" style="border:1px solid green;">
+</div>
+</pre>
+
+<h4>指定あり</h4>
+
+<div>
+  <input type="text" style="-webkit-appearance:none;border:1px solid green;">
+</div>
+
+<pre>
+<div>
+  <input type="text" style="-webkit-appearance:none;border:1px solid green;">
+</div>
+</pre>
