@@ -1,0 +1,70 @@
+<h2>【HTML5】spanタグ - インライン要素の作成</h2>
+
+spanタグは、インライン要素を作成します。
+
+<span>インライン要素</span>
+
+<pre>
+<span>インライン要素</span>
+</pre>
+
+<h3>インライン要素の幅は、内側の要素の幅になる</h3>
+
+インライン要素の幅は、内側の要素の幅になります。
+
+こちら<span style="background:pink;">本日のディナー</span>になります。
+
+<pre>
+こちら<span style="background:pink;">本日のディナー</span>になります。
+</pre>
+
+インライン要素では、幅や高さを指定することはできません。また上下のマージンを指定することはできません。この二つが、<a href="/blog/20200226082049.html">ブロック要素</a>との大きな違いです。
+
+<h3>どんなときにspanタグを使いますか?</h3>
+
+文字の大きさや色を一部分だけ変えたい場合です。
+
+<h4>電話番号</h4>
+
+Tel. だけは小さく、電話番号は大きく、色を付けたい場合。
+
+Tel. <span style="color:green;font-size:28px;letter-spacing:3px;">012-3456-7899</span>
+
+<pre>
+Tel. <span style="color:green;font-size:28px;letter-spacing:3px;">012-3456-7899</span>
+</pre>
+
+<h3>インライン要素になるタグ</h3>
+
+spanタグ以外では、以下のタグがデフォルトでインライン要素になります。
+
+<ul class="list">
+  <li><a href="/blog/20200222082049.html">aタグ</a></li>
+  <li><a href="/blog/20200221093554.html">bタグ</a></li>
+</ul>
+
+<pre>
+<ul class="list">
+  <li><a href="/blog/20200222082049.html">aタグ</a></li>
+  <li><a href="/blog/20200221093554.html">bタグ</a></li>
+</ul>
+</pre>
+
+<h4>aタグで、高さや幅が効かない</h4>
+
+aタグで、高さや幅が効かない場合は、aタグが、インライン要素だからです。その場合は「display:block;」で、ブロック要素にしましょう。
+
+<ul>
+  <li><a href="/" style="display:block;width:100%;background:yellow;">aタグで作るボタン1</a></li>
+  <li><a href="/" style="display:block;width:100%;background:pink;">aタグで作るボタン2</a></li>
+</ul>
+
+<pre>
+<ul>
+  <li><a href="/" style="display:block;width:100%;background:yellow;">aタグで作るボタン1</a></li>
+  <li><a href="/" style="display:block;width:100%;background:pink;">aタグで作るボタン2</a></li>
+</ul>
+</pre>
+
+
+
