@@ -1,0 +1,117 @@
+<h2>フォームの中でサブミットしないボタンを作成する</h2>
+
+フォームの中でサブミットしないボタンを作成する方法を解説します。
+
+ブラウザのデフォルトの動作は、フォームの中に、サブミットボタンあるいは、ボタンがあると、フォームをサブミットしようとします。
+
+<form>
+  <input type="text">
+  <input type="submit" value="登録する">
+</form>
+
+<form>
+  <input type="text">
+  <button>登録する</button>
+</form>
+
+<pre>
+<form>
+  <input type="text">
+  <input type="submit" value="登録する">
+</form>
+
+<form>
+  <input type="text">
+  <button>登録する</button>
+</form>
+</pre>
+
+クリックしてみてください。ブラウザのデフォルトの動作であるサブミットが起こって、ページが更新されています。
+
+<h3>フォームの中でサブミットしないボタン</h3>
+
+現代的な<a href="https://web.perlzemi.com/">Webシステム開発</a>においては、データの更新は、ajaxを使ってJavaScriptを行いたいという要望があります。ページの遷移を起こさずに、データを更新したいためです。
+
+そのため、フォームの中でサブミットしないボタンが欲しいですね。実は「type=button」とすると、サブミットしないボタンになります。
+
+<form>
+  <input type="text">
+  <button type="button">登録する</button>
+</form>
+
+<pre>
+<form>
+  <input type="text">
+  <button type="button">登録する</button>
+</form>
+</pre>
+
+クリックしてみてください。ページの遷移が起こりませんね。
+
+<h3>ajaxでフォームの内容を送信するサンプル</h3>
+
+jQueryとJavaScritpで、ajaxでフォームの内容を送信するサンプルを書いてみます。これは、実際には、サーバーサイド側の実装がないので、動かないことにご注意。取得したフォームの内容は、表示してみます。名前と年齢を入力して、登録ボタンを押してください。サーバー側の実装は、何も存在しないので、セキュリティエンジニアの皆さんも安心して、押してください。
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(document).on('click', '.myform .submit', function () {
+    var data = $(this).closest('form').serialize();
+    
+    // 内容を見てみる
+    alert(data);
+    
+    // ajaxでフォーム委の内容を送信
+    /*
+      $.post('/path', data, function () {
+        
+      });
+    */
+  });
+</script>
+
+<div class="myform">
+  <form>
+    <div>
+      名前: <input type="text" name="name">
+    </div>
+    <div>
+      年齢: <input type="text" name="age">
+    </div>
+    <div>
+      <button type="button" class="submit">登録する</button>
+    </div>
+  </form>
+</div>
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(document).on('click', '.myform .submit', function () {
+    var data = $(this).closest('form').serialize();
+    
+    // 内容を見てみる
+    alert(data);
+    
+    // ajaxでフォーム委の内容を送信
+    /*
+      $.post('/path', data, function () {
+        
+      });
+    */
+  });
+</script>
+
+<div class="myform">
+  <form>
+    <div>
+      名前: <input type="text" name="name">
+    </div>
+    <div>
+      年齢: <input type="text" name="age">
+    </div>
+    <div>
+      <button type="button" class="submit">登録する</button>
+    </div>
+  </form>
+</div>
+</pre>
