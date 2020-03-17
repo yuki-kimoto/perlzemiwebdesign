@@ -1,0 +1,168 @@
+<h2>【HTML5】テキストフィールド - テキスト入力のフォーム部品</h2>
+
+テキストフィールドは、テキストを入力するためのフォーム部品です。inputタグで「type="text"」を指定します。
+
+<input type="text" name="address">
+
+<pre>
+<input type="text" name="address">
+</pre>
+
+テキストを入力することができます。フォーム部品なので、name属性で、名前を付けておくことが一般的です。
+
+<h3>テキストフィールドは、インラインブロック要素</h3>
+
+テキストフィールドは、デフォルトで、インラインブロック要素です。インラインブロック要素なので、左側に流れ、高さや幅を設定することができます。
+
+<div>
+  <input type="text" name="address" style="width:100px;height:50px;">
+  <input type="text" name="tel" style="width:200px;height:80px;">
+</div>
+
+<pre>
+<input type="text" name="address" style="width:100px;height:50px;">
+<input type="text" name="tel" style="width:200px;height:80px;">
+</pre>
+
+<h3>テキストフィールドに、フォントサイズ、パディングを設定する</h3>
+
+デフォルトのテキストフィールドは、スマートフォンをメインに考えると、少し小さいです。テキストフィールドに、適切なパディングを設定してみましょう。
+
+<input type="text" name="address" style="padding:11px 5px 9px 5px;font-size:16px;">
+
+<pre>
+<input type="text" name="address" style="padding:12px 5px 10px 5px;">
+</pre>
+
+<h3>iphone/safari対応するために、テキストフィールドのフォントサイズは、16px以上に</h3>
+
+iphone/safari対応するために、テキストフィールドのフォントサイズは、16px以上にしましょう。<a href="/blog/20200309145137.html">iphone/safariでフォーム入力時の自動拡大機能をoff</a>にするためのです。
+
+<h3>ラベルをクリックしたときに、フォーカスが当たるようにする</h3>
+
+テキストフィールドだけではなく、項目見出しをクリックしたときに、フォーカスが当たるようにするにはlabelタグを使います。
+
+<label for="address">住所:</label> <input type="text" name="address" id="address">
+
+<pre>
+<label for="address">住所:</label> <input type="text" name="address" id="address">
+</pre>
+
+住所というラベルをクリックしてみてください。テキストフィールドに、フォーカスが当たります。
+
+<h3>フォーム送信時に、jQueryでフォームのテキストフィールドの値を取得する</h3>
+
+送信ボタンを押したタイミングで、テキストフィールドの値を取得する<a href="/blog/20200219091414.html">jQuery</a>を使ったサンプルです。ajaxでPOSTリクエストを送信するときに、よく使います。取得した内容を、alertで表示しています。
+
+<h4>フォームのすべての値を取得する方法</h4>
+
+フォームのすべての値を取得する方法です。
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-all .submit_button', function () {
+      
+      /* フォームのすべての値を取得する方法 */
+      var data = $(this).closest('form').serialize();
+      
+      alert(data);
+    });
+  });
+</script>
+
+<div class="form-text-field-all">
+  <form>
+    <div>
+      住所: <input type="text" name="address">
+    </div>
+    <div>
+      電話番号: <input type="text" name="tel">
+    </div>
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-all .submit_button', function () {
+      
+      /* フォームのすべての値を取得する方法 */
+      var data = $(this).closest('form').serialize();
+      
+      alert(data);
+    });
+  });
+</script>
+
+<div class="form-text-field-all">
+  <form>
+    <div>
+      住所: <input type="text" name="address">
+    </div>
+    <div>
+      電話番号: <input type="text" name="tel">
+    </div>
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+</pre>
+
+on('click')をdocumentから始めているのは、動的なHTMLの書き換えに対応するためです。ドキュメントトップからたどると、HTMLの部分が動的に書き換えられた場合も、正しく動作します。buttonに「type="button"」を指定しておくと、<a href="/blog/20200313095039.html">フォームのボタンのサブミットの動作がなくなくす</a>ことができます。
+
+<h4>個別のテキストフィールドの値を取得する方法</h4>
+
+個別のテキストフィールドの値を取得する方法です。住所だけを取得しています。
+
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-part .submit_button', function () {
+      
+      /* 住所を取得 */
+      var address = $(this).closest('form').find('[name=address]').val();
+      
+      alert(address);
+    });
+  });
+</script>
+
+<div class="form-text-field-part">
+  <form>
+    <div>
+      住所: <input type="text" name="address">
+    </div>
+    <div>
+      電話番号: <input type="text" name="tel">
+    </div>
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-part .submit_button', function () {
+      
+      /* 住所を取得 */
+      var address = $(this).closest('form').find('[name=address]').val();
+      
+      alert(address);
+    });
+  });
+</script>
+
+<div class="form-text-field-part">
+  <form>
+    <div>
+      住所: <input type="text" name="address">
+    </div>
+    <div>
+      電話番号: <input type="text" name="tel">
+    </div>
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+</pre>
