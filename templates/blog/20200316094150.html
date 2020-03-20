@@ -42,6 +42,24 @@
   <input type="radio" name="price" value="99999999">3000円以上
 </pre>
 
+<h3>ラジオボタンをあらかじめチェックする</h3>
+
+ラジオボタンをあらかじめチェックしておきたいときは「checked="checked"」を指定します。
+
+  <b>価格</b>
+  <input type="radio" name="price" value="1000" checked="checked">1000円未満
+  <input type="radio" name="price" value="2000">1000円～2000円まで
+  <input type="radio" name="price" value="3000">2000円～3000円まで
+  <input type="radio" name="price" value="99999999">3000円以上
+
+<pre>
+<b>価格</b>
+<input type="radio" name="price" value="1000" checked="checked">1000円未満
+<input type="radio" name="price" value="2000">1000円～2000円まで
+<input type="radio" name="price" value="3000">2000円～3000円まで
+<input type="radio" name="price" value="99999999">3000円以上
+</pre>
+
 <h3>ラジオボタンの各項目のラベルをクリックしたときにフォーカスを当てる</h3>
 
 ラジオボタンそのものだけでなく、ラジオボタンの各項目の見出しのラベルをクリックしたときに、フォーカスが当たるようにするにはlabelタグを使います。inputタグの中のid属性で指定した名前をlabelタグのfor属性に指定します。
@@ -173,4 +191,124 @@ on('click')をdocumentから始めているのは、動的なHTMLの書き換え
     <button type="button" class="submit_button">送信</button>
   </form>
 </div>
+</pre>
+
+<h3>ラジオボタンをオリジナルのデザインにする</h3>
+
+ラジオボタンは、マウスクリックであれば、スマートフォンでは、少し使いづらいという感じはします。
+
+ラジオボタンを、オリジナルのデザインにしてみましょう。方法を解説します。
+
+1. ラジオボタンにラベルを付ける
+
+2. ラジオボタンを非表示にする
+
+3. 兄弟セレクタを使って、チェックを検知
+
+以下は、ラジオボタンをオリジナルのデザインにするサンプルです。チェックされた項目が、ピンクになります。ラジオボタンに見えないですが、ラジオボタンとして機能します。
+
+<style>
+  /* ラジオボタンを非表示にする */
+  .original_radio input[type=radio] {
+    display:none;
+  }
+  
+  /* 選択されたチェックボックスの兄弟であるlabel */
+  .original_radio input[type=radio]:checked + label {
+    background:pink;
+  }
+  
+  .original_radio {
+    display:flex;
+    flex-wrap:wrap;
+    width:300px;
+  }
+  .original_radio li {
+    width:100%;
+    border:1px solid #ddd;
+    border-bottom:none;
+  }
+  .original_radio li:first-child {
+    border-radius:5px 5px 0 0;
+  }
+  .original_radio li:last-child {
+    border-radius:0 0 5px 5px;
+    border-bottom:1px solid #ddd;
+  }
+  .original_radio label {
+    display:block;
+    width:100%;
+    padding:10px 20px;
+    cursor:pointer;
+  }
+</style>
+
+  <b>価格</b>
+  <ul class="original_radio">
+    <li>
+      <input type="radio" name="price" id="original_price1" value="1000"><label for="original_price1">1000円未満</label>
+    </li>
+    <li>
+      <input type="radio" name="price" id="original_price2" value="2000"><label for="original_price2">1000円～2000円まで</label>
+    </li>
+    <li>
+      <input type="radio" name="price" id="original_price3" value="3000"><label for="original_price3">2000円～3000円まで</label>
+    </li>
+    <li>
+      <input type="radio" name="price" id="original_price4" value="99999999"><label for="original_price4">3000円以上</label>
+    </li>
+  </ul>
+
+<pre>
+<style>
+  /* ラジオボタンを非表示にする */
+  .original_radio input[type=radio] {
+    display:none;
+  }
+  
+  /* 選択されたチェックボックスの兄弟であるlabel */
+  .original_radio input[type=radio]:checked + label {
+    background:pink;
+  }
+  
+  .original_radio {
+    display:flex;
+    flex-wrap:wrap;
+    width:300px;
+  }
+  .original_radio li {
+    width:100%;
+    border:1px solid #ddd;
+    border-bottom:none;
+  }
+  .original_radio li:first-child {
+    border-radius:5px 5px 0 0;
+  }
+  .original_radio li:last-child {
+    border-radius:0 0 5px 5px;
+    border-bottom:1px solid #ddd;
+  }
+  .original_radio label {
+    display:block;
+    width:100%;
+    padding:10px 20px;
+    cursor:pointer;
+  }
+</style>
+
+<b>価格</b>
+<ul class="original_radio">
+  <li>
+    <input type="radio" name="price" id="original_price1" value="1000"><label for="original_price1">1000円未満</label>
+  </li>
+  <li>
+    <input type="radio" name="price" id="original_price2" value="2000"><label for="original_price2">1000円～2000円まで</label>
+  </li>
+  <li>
+    <input type="radio" name="price" id="original_price3" value="3000"><label for="original_price3">2000円～3000円まで</label>
+  </li>
+  <li>
+    <input type="radio" name="price" id="original_price4" value="99999999"><label for="original_price4">3000円以上</label>
+  </li>
+</ul>
 </pre>
