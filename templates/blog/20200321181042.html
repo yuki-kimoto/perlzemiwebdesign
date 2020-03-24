@@ -1,0 +1,55 @@
+<h2>【HTML5】tableタグ - テーブルを作成する</h2>
+
+<b>tableタグ</b>でテーブルを作成できます。
+
+<pre>
+<table>
+</table>
+</pre>
+
+一般的には、列と項目を作成するために、trタグとtdタグをtableタグの下に配置します。
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  table td {
+    border:1px solid #ddd;
+    padding:7px;
+  }
+</style>
+<table>
+  <tr>
+    <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+  </tr>
+  <tr>
+    <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+  </tr>
+</table>
+
+<pre>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  table td {
+    border:1px solid #ddd;
+    padding:7px;
+  }
+</style>
+
+<table>
+  <tr>
+    <td>1行1列</td>1行2列<td><td>1行3列</td>
+  </tr>
+  <tr>
+    <td>2行1列</td>2行2列<td><td>2行3列</td>
+  </tr>
+</table>
+</pre>
+
+テーブルの具体的な作成方法については、以下の記事を参考にしてください。
+
+<a href="/blog/20200324095249.html">テーブルの作成方法をマスターする</a>
