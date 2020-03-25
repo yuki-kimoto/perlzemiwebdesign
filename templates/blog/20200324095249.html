@@ -1,6 +1,6 @@
 <h2>テーブルの作成方法をマスターする</h2>
 
-テーブルを作成するにはtableタグ、trタグ、tdタグを使用します。
+テーブルを作成するには<a href="/blog/20200321181042.html">tableタグ</a>、<a href="/blog/20200315094150.html">trタグ</a>、<a href="/blog/20200314094150.html">tdタグ</a>を使用します。
 
 <table>
   <tr>
@@ -24,3 +24,312 @@
 
 tableタグの下に列を表現するtrタグを配置します。trタグの下に行を表現するtdタグを配置します。
 
+<h3>テーブルの項目に枠をつける</h3>
+
+テーブルの項目に枠をつけてみましょう。テーブルの項目に枠をつけるには、tdタグのスタイルシート(CSS)でborderを指定します。
+
+<style>
+  .waku td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+あれ、ボーダーが、離れていますね。ちょっと、テーブルっぽくないですね。
+
+<h3>テーブルの枠が離れているのを結合する</h3>
+
+テーブルの枠が離れているのを結合してみましょう。tableタグのスタイルシート(CSS)に「border-collapse:collapse;」を指定します。
+
+<style>
+  .waku_collapse table {
+    border-collapse:collapse;
+  }
+  .waku_collapse td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku_collapse">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse table {
+    border-collapse:collapse;
+  }
+  .waku_collapse td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku_collapse">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+よく見るテーブルの枠ができあがりました。
+
+<h3>テーブルの項目に適切なパディングを設定する</h3>
+
+テーブルの項目に適切なパディングを設定してみましょう。少し窮屈ですね。
+
+<style>
+  .waku_collapse_padding table {
+    border-collapse:collapse;
+  }
+  .waku_collapse_padding td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding table {
+    border-collapse:collapse;
+  }
+  .waku_collapse_padding td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+<h3>テーブルの幅を100%にする</h3>
+
+テーブルの幅を100%にしてみましょう。テーブルはブロック要素と思いきや、ブロック要素ではなく、テーブル要素という特別な要素です。デフォルトの幅は、項目がちょうど収まる幅に自動調整されるようになっています。
+
+テーブルの幅を100%にするにはtableタグのスタイルシート(CSS)に「width:100%;」を指定します。
+
+<style>
+  .waku_collapse_padding_100 table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100 td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding_100">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding_100 table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100 td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding_100">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+<h3>見出しを付ける</h3>
+
+テーブルに見出しを付けてみましょう。見出し用の<a href="/blog/20200311095039.html">thタグ</a>がありますので、これを使うとよいでしょう。
+
+<h4>1行目を見出しにする場合</h4>
+
+1行目を見出しにしてみましょう。見出し行は、背景色を変えて、太字にしています。thタグは、デフォルトで、テキストが中央よせになります。
+
+<style>
+  .waku_collapse_padding_100_head_1row table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1row td, .waku_collapse_padding_100_head_1row th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1row th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1row">
+  <table>
+    <tr>
+      <th>1行1列</th><th>1行2列</th><th>1行3列</th>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding_100_head_1row table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1row td, .waku_collapse_padding_100_head_1row th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1row th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1row">
+  <table>
+    <tr>
+      <th>1行1列</th><th>1行2列</th><th>1行3列</th>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+<h4>1列目を見出しにする場合</h4>
+
+1列目を見出しにしてみましょう。見出し行は、背景色を変えて、太字にしています。thタグは、デフォルトで、テキストが中央よせになります。
+
+<style>
+  .waku_collapse_padding_100_head_1col table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1col td, .waku_collapse_padding_100_head_1col th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1col th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1col">
+  <table>
+    <tr>
+      <th>1行1列</th><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <th>2行1列</th><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding_100_head_1col table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1col td, .waku_collapse_padding_100_head_1col th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1col th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1col">
+  <table>
+    <tr>
+      <th>1行1列</th><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <th>2行1列</th><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
