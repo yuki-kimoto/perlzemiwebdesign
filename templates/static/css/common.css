@@ -88,11 +88,6 @@
     margin-bottom:10px;
     padding:10px 35px;
   }
-  ul li {
-    line-height:1.5;
-    list-style:none;
-  }
-  
   /* side */
   .side {
     float:left;
