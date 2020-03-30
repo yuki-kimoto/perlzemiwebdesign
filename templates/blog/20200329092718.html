@@ -1,0 +1,46 @@
+<h2>scriptタグ - JavaScriptを記述して実行する</h2>
+
+<b>scriptタグ</b>を使うと、JavaScriptを記述して実行できます。
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  
+  $(function () {
+    $('.js-hello').on('click', function () {
+      alert('こんにちは');
+    });
+  });
+</script>
+
+<div>
+  <button class="js-hello">スクリプトを実行</button>
+</div>
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  
+  $(function () {
+    $('.js-hello').on('click', function () {
+      alert('こんにちは');
+    });
+  });
+</script>
+
+<div>
+  <button class="js-hello">スクリプトを実行</button>
+</div>
+</pre>
+
+JavaScriptと<a href="/blog/20200312095039.html">jQuery</a>を使って、ボタンを押したときに「こんにちは」と表示しています。
+
+<h3>外部のJavaScriptファイルを読み込む</h3>
+
+scriptタグの<b>src属性</b>を使うと、外部のJavaScriptファイルを読み込むことができます。
+
+<pre>
+<script src="/js/myapi.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</pre>
+
+ローカルファイルでも、インターネット上のファイルでも、どちらでも大丈夫です。
