@@ -1,3 +1,24 @@
+use strict;
+use warnings;
+
+my @lines;
+
+my ($file) = @ARGV;
+
+while (my $line = <DATA>) {
+  push @lines, $line;
+}
+
+while (my $line = <>) {
+  push @lines, $line;
+}
+
+open my $fh, '>', $file
+  or die;
+
+print $fh @lines;
+
+__DATA__
 <div class="bread">
   <ul itemscope itemtype="http://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -17,28 +38,3 @@
     </li>
   </ul>
 </div>
-<h2>【HTML5】htmlタグ - 中にHTMLを書く場所</h2>
-
-HTMLは、<b>htmlタグ</b>の中に書きます。
-
-<pre>
-<html>
-  HTMLの内容
-</html>
-</pre>
-
-<h3>HTMLのひな型</h3>
-
-<a href="/blog/20200205092826.html">DOCTYPE宣言</a>と<b>htmlタグ</b>、<a href="/blog/20200202092826.html">headタグ</a>、<a href="/blog/20200203092826.html">bodyタグ</a>がHTMLのひな型になります。
-
-<pre>
-<!DOCTYPE html>
-<html>
-  <head>
-    HTMLヘッダ
-  </head>
-  <body>
-    HTMLコンテンツ
-  </body>
-</html>
-</pre>
