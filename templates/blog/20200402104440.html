@@ -1,0 +1,142 @@
+<h2>【CSS3】フォントの色を設定する</h2>
+
+<b>フォントの色を設定</b>するには「color」をスタイルシート(CSS)で設定します。
+
+<div style="color:red;">色名で指定 red</div>
+
+<div style="color:#3af;">RGB 16進数で指定 3桁 #3af</div>
+
+<div style="color:#f5b547;">RGB 16進数で指定 6桁 #f5b547</div>
+
+<pre>
+<div style="color:red;">色名で指定 red</div>
+
+<div style="color:#3af;">RGB 16進数で指定 3桁 #3af</div>
+
+<div style="color:#f5b547;">RGB 16進数で指定 6桁 #f5b547</div>
+</pre>
+
+RGBというのは、Red、Green、Blueの略で、赤と緑と青の強さを表しています。
+
+16進数というのは「0～9a-f」の16文字で表現する数です。fが一番大きいです。
+
+3桁の16進数の場合は「#3af」は「#33aaff」と同じ意味になります。
+
+<h3>色名</h3>
+
+色名をいくつか挙げてみます。
+
+<pre>
+color:red;
+color:blue;
+color:green;
+color:white;
+color:black;
+</pre>
+
+色名の指定は簡単なのですが、Webデザインにおいては、原則として、使わないと考えておいてください。
+
+基本はRGBのカラーコードを使うのが推奨です。
+
+whiteは、比較的使う場面があるかなという感じです。
+
+黒色は、濃さを調整するのに微調整をすることが多いので、カラーコードを使うのが推奨です。
+
+<h3>カラーコード</h3>
+
+カラーコードについて簡単に解説します。
+
+<h4>白は#ffffff</h4>
+
+赤と緑と青の強さが、すべて最大になると「白」になります。
+
+<div style="background:green;color:#ffffff">
+  白色
+</div>
+
+<pre>
+<div style="background:green;color:#ffffff">
+  白色
+</div>
+</pre>
+
+簡単に「#fff」でもOKです。
+
+<h4>黒は#000000</h4>
+
+赤と緑と青の強さが、すべて最小になると「黒」になります。
+
+<div style="color:#000000">
+  黒色
+</div>
+
+<pre>
+<div style="color:#000000">
+  黒色
+</div>
+</pre>
+
+簡単に「#000」でもOKです。
+
+<h4>原色の赤は#ff0000</h4>
+
+赤の強さ最大、それ以外が最小になると「原色の赤」になります。
+
+<div style="color:#ff0000">
+  原色の赤
+</div>
+
+<pre>
+<div style="color:#ff0000">
+  原色の赤
+</div>
+</pre>
+
+簡単に「#f00」でもOKです。
+
+<h4>原色の緑は#ff0000</h4>
+
+緑の強さ最大、それ以外が最小になると「原色の緑」になります。
+
+<div style="color:#00ff00">
+  原色の緑
+</div>
+
+<pre>
+<div style="color:#00ff00">
+  原色の緑
+</div>
+</pre>
+
+簡単に「#0f0」でもOKです。
+
+<h4>原色の青は#0000ff</h4>
+
+青の強さ最大、それ以外が最小になると「原色の青」になります。
+
+<div style="color:#0000ff">
+  原色の青
+</div>
+
+<pre>
+<div style="color:#0000ff">
+  原色の青
+</div>
+</pre>
+
+簡単に「#00f」でもOKです。
+
+<h4>色は赤緑青の強さの組み合わせで表現される</h4>
+
+色は赤緑青の強さの組み合わせで表現されます。まず、これが基本なので、覚えておきましょう。
+
+<h4>カラーコードを取得するには?</h4>
+
+カラーコードをgoogle色見本を使うのが、一番簡単です。
+
+<a href="https://www.google.com/search?safe=active&sxsrf=ALeKk03SFrRaguPaODkZF3koDfVqIuag8w%3A1585792636413&ei=fEaFXpvqGI6zmAW5lKn4DA&q=%E8%89%B2%E8%A6%8B%E6%9C%AC&oq=%E8%89%B2%E8%A6%8B%E6%9C%AC&gs_lcp=CgZwc3ktYWIQAzIECAAQRzIECAAQRzIECAAQRzIECAAQRzIECAAQR1AAWABgs_gtaABwAngAgAEAiAEAkgEAmAEAqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwibmJ_20cjoAhWOGaYKHTlKCs8Q4dUDCAs&uact=5">google色見本</a>
+
+どのような色が、どんなカラーコードになるか、みてみましょう。
+
+赤、緑、青の強さが、どうなっているか、みてみましょう。
+
