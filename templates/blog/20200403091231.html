@@ -1,0 +1,115 @@
+<h2>【CSS3】opacity - 不透明度を設定する</h2>
+
+要素の不透明度を設定するには<b>opacity</b>をスタイルシート(CSS)で設定します。不透明度の最大は1、不透明度の最小は0です。言い換えると、0に近づけると透明度が上がっていきます。
+
+<pre>
+/* 不透明度 1 - デフォルトと同じ */
+opacity:1;
+
+/* 不透明度 0.8 - 少し透明感が増して光った感じ */
+opacity:0.8;
+
+/* 不透明度 0.4 - 透明度が増す */
+opacity:0.4;
+
+/* 不透明度 0.1 - 消えかけ */
+opacity:0.1;
+
+/* 不透明度 0 - 完全な透明 */
+opacity:0;
+</pre>
+
+実際に不透明度を、設定してみましょう。不透明度 0 のものは、完全に消えて見えません。
+
+<div>
+<div style="opacity:1;">不透明度 1 - デフォルトと同じ</div>
+
+<div style="opacity:0.8;">不透明度 0.8 - 少し透明感が増して光った感じ</div>
+
+<div style="opacity:0.4;">不透明度 0.4 - 透明度が増す</div>
+
+<div style="opacity:0.1;">不透明度 0.1 - 消えかけ</div>
+
+<div style="opacity:0;">不透明度 0 - 完全な透明</div>
+</div>
+
+<pre>
+<div style="opacity:1;">不透明度 1 - デフォルトと同じ</div>
+
+<div style="opacity:0.8;">不透明度 0.8 - 少し透明感が増して光った感じ</div>
+
+<div style="opacity:0.4;">不透明度 0.4 - 透明度が増す</div>
+
+<div style="opacity:0.1;">不透明度 0.1 - 消えかけ</div>
+
+<div style="opacity:0;">不透明度 0 - 完全な透明</div>
+</pre>
+
+<h3>透明度は要素全体に対して適用される</h3>
+
+
+透明度は、要素全体に対して適用されます。つまり、背景や枠線など、すべてを含めて透明度が適用されます。
+
+<div style="opacity:1;background:blue;border:1px solid black;">不透明度 1 - デフォルトと同じ</div>
+
+<div style="opacity:0.8;background:blue;border:1px solid black;">不透明度 0.8 - 少し透明感が増して光った感じ</div>
+
+<div style="opacity:0.4;background:blue;border:1px solid black;">不透明度 0.4 - 透明度が増す</div>
+
+<div style="opacity:0.1;background:blue;border:1px solid black;">不透明度 0.1 - 消えかけ</div>
+
+<div style="opacity:0;background:blue;border:1px solid black;">不透明度 0 - 完全な透明</div>
+
+<h3>ホバーしたときにボタンを光らせる</h3>
+
+不透明度の設定を使ってホバーしたときにボタンを光らせてみましょう。これが、ホバーというアクションをしていることを、ユーザーに知らせる、簡単な方法です。
+
+<style>
+  .button_hover {
+    width:calc(100% - 30px);
+    max-width:600px;
+    margin: 0 auto;
+  }
+  .button_hover a {
+    display:block;
+    width:100%;
+    background:#15e650;
+    color:white;
+    text-align:center;
+    padding:20px 50px;
+    font-size:20px;
+  }
+  .button_hover a:hover {
+    opacity:0.8;
+  }
+</style>
+
+<div class="button_hover">
+  <a href="/">トップへ</a>
+</div>
+
+<pre>
+<style>
+  .button_hover {
+    width:calc(100% - 30px);
+    max-width:600px;
+    margin: 0 auto;
+  }
+  .button_hover a {
+    display:block;
+    width:100%;
+    background:#15e650;
+    color:white;
+    text-align:center;
+    padding:20px 50px;
+    font-size:20px;
+  }
+  .button_hover a:hover {
+    opacity:0.8;
+  }
+</style>
+
+<div class="button_hover">
+  <a href="/">トップへ</a>
+</div>
+</pre>
