@@ -97,8 +97,8 @@
   
   /* tags */
   h1 {
-    max-width:1020px;
-    width:100%;
+    width:calc(100% - 50px);
+    margin: 0 auto;
     font-size:22px;
     padding:15px 10px 11px 73px;
     background:url(/images/webdesign-logo.png) no-repeat 10px 5px;
