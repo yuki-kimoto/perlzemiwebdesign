@@ -1,0 +1,47 @@
+<h2>【CSS3】子セレクタ</h2>
+
+<b>子セレクタ</b>は、スタイルシート(CSS)を適用する要素を、親子関係にある<a href="/blog/20200423134429.html">IDセレクタ</a>、<a href="/blog/20200422134429.html">クラスセレクタ</a>、<a href="/blog/20200421134429.html">要素セレクタ</a>を使って指定することができる機能です。
+
+以下の例では「.food > ul」という指定で「.food」の直接の子である「ul」を指定しています。「.food > ul > li」という指定で「.food」の直接の子である「ul」の直接の子である「li」を指定しています。
+
+<a href="/blog/20200423141506.html">子孫セレクタ</a>と異なり直接の子だけが対象になることに注意してください。
+
+<style>
+  .food > ul {
+    border:1px solid #ddd;
+  }
+  .food > ul > li {
+    color:red;
+    list-style:none;
+    padding-left:5px;
+  }
+</style>
+
+<div class="food">
+  <ul>
+    <li>焼肉</li>
+    <li>サラダ</li>
+    <li>うどん</li>
+  </ul>
+</div>
+
+<pre>
+<style>
+  .food > ul {
+    border:1px solid #ddd;
+  }
+  .food > ul > li {
+    color:red;
+    list-style:none;
+    padding-left:5px;
+  }
+</style>
+
+<div class="food">
+  <ul>
+    <li>焼肉</li>
+    <li>サラダ</li>
+    <li>うどん</li>
+  </ul>
+</div>
+</pre>

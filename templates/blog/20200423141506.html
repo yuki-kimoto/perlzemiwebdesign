@@ -1,0 +1,48 @@
+<h2>【CSS3】子孫セレクタ</h2>
+
+<b>子孫セレクタ</b>は、スタイルシート(CSS)を適用する要素を、子孫関係にある<a href="/blog/20200423134429.html">IDセレクタ</a>、<a href="/blog/20200422134429.html">クラスセレクタ</a>、<a href="/blog/20200421134429.html">要素セレクタ</a>を使って指定することができる機能です。
+
+以下の例では「.food ul」という指定で「.food」の子孫である「ul」を指定しています。「.food li」という指定で「.food」の子孫である「li」を指定しています。
+
+<style>
+  .food ul {
+    border:1px solid #ddd;
+  }
+  .food li {
+    color:red;
+    list-style:none;
+    padding-left:5px;
+  }
+</style>
+
+<div class="food">
+  <ul>
+    <li>焼肉</li>
+    <li>サラダ</li>
+    <li>うどん</li>
+  </ul>
+</div>
+
+<pre>
+<style>
+  .food ul {
+    border:1px solid #ddd;
+  }
+  .food li {
+    color:red;
+    list-style:none;
+    padding-left:5px;
+  }
+</style>
+
+<div class="food">
+  <ul>
+    <li>焼肉</li>
+    <li>サラダ</li>
+    <li>うどん</li>
+  </ul>
+</div>
+</pre>
+
+子孫セレクタは、要素を指定するために頻繁に使います。クラス名とタグ名を組み合わせると、記述が簡潔になります。
+
