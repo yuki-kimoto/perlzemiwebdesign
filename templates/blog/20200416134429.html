@@ -24,26 +24,38 @@
   </ul>
 </div>
 
-<h2>hover疑似クラス - CSS入門【CSS3対応】</h2>
+<h2>first-child疑似クラス - CSS入門【CSS3対応】</h2>
 
-hover疑似クラスは、要素の上にカーソルを乗せたときのスタイルを設定するための疑似的なクラスです。<a href="/blog/20200222082049.html">aタグ</a>と組み合わせて使われます。
+first-child疑似クラスは、自分の親から見て、最初の兄弟にスタイルを設定するための疑似的なクラスです。<a href="/blog/20200306145137.html">liタグ</a>と組み合わせて使われることが多いです。
 
 <style>
-  a:hover {
-    opacity:0.8;
+  .my_list li:first-child {
+    background:#ddd;
   }
 </style>
 
-<a href="/">ホバーで光るリンク</a>
+<div class="my_list">
+  <ul>
+    <li>最初</li>
+    <li>次</li>
+    <li>最後</li>
+  </ul>
+</div>
 
 <pre>
 <style>
-  a:hover {
-    opacity:0.8;
+  .my_list li:first-child {
+    background:#ddd;
   }
 </style>
 
-<a href="/">ホバーで光るリンク</a>
+<div class="my_list">
+  <ul>
+    <li>最初</li>
+    <li>次</li>
+    <li>最後</li>
+  </ul>
+</div>
 </pre>
 
-マウスを上にのせると、光ります。
+最初のliタグにだけスタイルが適用されます。
