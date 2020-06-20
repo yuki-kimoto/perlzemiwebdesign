@@ -48,6 +48,7 @@
     letter-spacing:1px;
     font-size:18px;
     cursor:pointer;
+    text-decoration:underline;
   }
   .footer a:hover {
     opacity:0.8;
