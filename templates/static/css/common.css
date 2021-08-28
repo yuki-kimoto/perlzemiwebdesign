@@ -123,7 +123,7 @@
   /* content */
   .content {
     float:left;
-    width:calc(100% - 280px);
+    width:calc(100% - 320px);
   }
   
   /* entry */
@@ -135,7 +135,7 @@
   /* side */
   .side {
     float:left;
-    width:280px;
+    width:320px;
     padding-top:16px;
   }
   
@@ -216,10 +216,10 @@
   .before-days {
     text-align:center;
   }
-  .side-list {
+  .side_list {
     padding:5px;
   }
-  .side-list-title {
+  .side_list_title {
     background:#00AE50;
     color:white;
     font-weight:bold;
@@ -228,10 +228,10 @@
     border:1px solid #E5E5E5;
     border-bottom:none;
   }
-  .side-list ul {
+  .side_list ul {
     border:1px solid #ccc;
   }
-  .side-list li {
+  .side_list li {
     list-style:none;
     background:white;
     border-bottom:1px solid #E5E5E5;
