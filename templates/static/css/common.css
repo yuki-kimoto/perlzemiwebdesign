@@ -24,6 +24,7 @@
     background:white;
   }
   .header_main {
+    max-width:1030px;
     display:flex;
     margin:0 auto;
   }
@@ -154,10 +155,16 @@
   
   /* main */
   .main {
+    max-width:1030px;
+    width:100%;
+    margin: 0 auto;
+    display:flex;
+    flex-wrap:wrap;
   }
   
   /* content */
   .content {
+    width:calc(100% - 320px - 20px);
   }
   
   /* entry */
@@ -172,6 +179,8 @@
   
   /* サイドバー */
   .side {
+    width:320px;
+    margin-left:20px;
   }
   .side_list {
   }
