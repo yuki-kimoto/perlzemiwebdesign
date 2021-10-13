@@ -1,9 +1,0 @@
-<h2>文字単位で折り返す word-break : break-all | HTML/CSSテクニック</h2>
-
-HTMLの中の文字列を、文字単位で折り返したい場合はCSSで「word-break : break-all」を指定します。
-
-<pre>
-word-break : break-all
-</pre>
-
-英語であっても、幅に達すると、単語単位ではなく、文字単位で、折り返されます。

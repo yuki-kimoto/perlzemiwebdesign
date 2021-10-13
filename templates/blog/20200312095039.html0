@@ -1,8 +1,0 @@
-<h2>jQuery - JavaScriptでのHTML/CSSの操作を簡単にするライブラリ</h2>
-
-jQueryは、JavaScriptでのHTML/CSSの操作を簡単にするライブラリです。
-
-<ul>
-  <li><a href="/blog/20200219091414.html">jQueryのダウンロードと読み込み方法</a></li>
-  <li><a href="/blog/20200310145137.html">jQueryでテキストフィールドの変更を検知する</a></li>
-</ul>

@@ -1,7 +1,0 @@
-<h2>スマートフォン対応のビューポートの設定</h2>
-
-スマートフォン対応するWebサイトには、以下の<a href="/blog/20200224112719.html">metaタグ</a>で指定できるビューポートを<a href="/blog/20200202092826.html">HTMLヘッダ</a>に指定します。スマートフォンの横幅に合わせて、描画してくれます。
-
-<pre>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-</pre>
