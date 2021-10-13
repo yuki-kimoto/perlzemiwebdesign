@@ -1,0 +1,48 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200426085612.html">
+        <span itemprop="name">セレクタ</span>
+      </a>
+      <meta itemprop="position" content="3" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>セレクタの複数指定 - CSS入門【CSS3対応】</h2>
+
+セレクタは「,」を使うことで、複数指定することができます。
+
+<style>
+  a, a:visited, a:hover {
+    color:red;
+  }
+</style>
+
+<a href="/">セレクタの複数指定</a>
+
+<pre>
+<style>
+  a, a:visited, a:hover {
+    color:red;
+  }
+</style>
+
+<a href="/">セレクタの複数指定</a>
+</pre>
+

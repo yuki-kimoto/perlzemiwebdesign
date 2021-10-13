@@ -1,0 +1,28 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200328092718.html">
+        <span itemprop="name">HTML5</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+<h2>HTML5のDOCTYPE宣言</h2>
+
+<b>HTML5</b>における、HTMLファイルの先頭は、以下の<b>DOCTYPE宣言</b>です。
+
+<pre>
+<!DOCTYPE html>
+</pre>
+
+これは、現在のブラウザでは、特に意味を持つことはないといわれていますが、HTML5で書かれていることを明示するために、記述しておきましょう。

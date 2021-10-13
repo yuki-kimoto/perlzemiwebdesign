@@ -1,0 +1,35 @@
+<style>
+  li { list-style:none }
+</style>
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>セレクタ - CSS入門【CSS3対応】</h2>
+
+<ul>
+  <li><a href="/blog/20200411134139.html">* - 全称セレクタ</a></li>
+  <li><a href="/blog/20200422134429.html">クラスセレクタ</a></li>
+  <li><a href="/blog/20200417134429.html">IDセレクタ</a></li>
+  <li><a href="/blog/20200421134429.html">要素セレクタ</a></li>
+  <li><a href="/blog/20200423141506.html">子孫セレクタ</a></li>
+  <li><a href="/blog/20200420134429.html">子セレクタ</a></li>
+  <li><a href="/blog/20200424150524.html">セレクタの複数指定</a></li>
+  <li><a href="/blog/20200419150524.html">兄弟セレクタ</a></li>
+</ul>

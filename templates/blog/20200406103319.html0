@@ -1,0 +1,98 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>border - ボーダーを設定する - CSS入門【CSS3対応】</h2>
+
+ボーダーを設定するには、スタイルシート(CSS)で<b>border</b>を指定します。borderには、ボーダーの太さ、ボーダーの種類、色を空白で区切って指定します。
+
+<div style="border:1px solid #ddd;">
+  ボーダー
+</div>
+
+<pre>
+<div style="border:1px solid #ddd;">
+  ボーダー
+</div>
+</pre>
+
+solidは、1本線を表すボーダーの種類の指定です。
+
+ボーダーの種類は、HTMLクイックリファレンスが参考になります。
+
+<a target="_blank" href="http://www.htmq.com/style/border-style.shtml">border-style - ボーダーのスタイルを指定する - HTMLクイックリファレンス</a>
+
+<h3>ボーダーの内側に適切にパディングを設定する</h3>
+
+ボーダーの内側に適切にパディングを設定してみましょう。
+
+<div style="border:1px solid #ddd;padding:10px 20px;">
+  ボーダー
+</div>
+
+<h3>ボーダーの位置を指定する</h3>
+
+「border-top」「border-bottom」「border-left」「border-right」を使用すると、一つの側だけにボーダーを設定することができます。
+
+<div style="border-top:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー上
+</div>
+
+<div style="border-bottom:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー下
+</div>
+
+<div style="border-left:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー左
+</div>
+
+<div style="border-right:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー右
+</div>
+
+<pre>
+<div style="border-top:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー上
+</div>
+
+<div style="border-bottom:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー下
+</div>
+
+<div style="border-left:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー左
+</div>
+
+<div style="border-right:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー右
+</div>
+
+</pre>
+
+組み合わせることもできます。
+
+<div style="border-top:1px solid blue;border-bottom:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー上下
+</div>
+
+<pre>
+<div style="border-top:1px solid blue;border-bottom:1px solid blue;margin-bottom:10px;background:#eee;">
+  ボーダー上下
+</div>
+</pre>

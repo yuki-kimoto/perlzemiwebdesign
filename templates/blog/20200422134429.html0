@@ -1,0 +1,93 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200426085612.html">
+        <span itemprop="name">セレクタ</span>
+      </a>
+      <meta itemprop="position" content="3" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>クラスセレクタ - CSS入門【CSS3対応】</h2>
+
+<b>クラスセレクタ</b>は、スタイルシート(CSS)を適用する要素のクラスを指定するためのものです。
+
+クラスセレクタは「.」で始め、適用したい要素のクラス名を指定します。「.menu」の部分がクラスセレクタです。
+
+<pre>
+.menu {
+  color:red;
+}
+</pre>
+
+クラスセレクタを使ってみましょう。
+
+<style>
+  .menu {
+    color:red;
+  }
+</style>
+
+<div class="menu">
+  焼肉
+</div>
+
+<pre>
+<style>
+.menu {
+  color:red;
+}
+</style>
+
+<div class="menu">
+  焼肉
+</div>
+</pre>
+
+<h3>クラスセレクタと要素セレクタの組み合わせ</h3>
+
+クラスセレクタと<a href="/blog/20200421134429.html">要素セレクタ</a>を組み合わせることもできます。
+
+<style>
+  div.menu {
+    color:red;
+  }
+</style>
+
+<div class="menu">
+  焼肉
+</div>
+
+<pre>
+<style>
+  div.menu {
+    color:red;
+  }
+</style>
+
+<div class="menu">
+  焼肉
+</div>
+</pre>
+
+<h3>クラスセレクタとIDセレクタのどちらを使うべきですか?</h3>
+
+基本的には、スタイルシート(CSS)の中では、クラスセレクタのみを使うのが、お勧めです。
+
+<a href="/blog/20200423134429.html">IDセレクタ</a>は、要素が一意である必要があるのに対し、クラスセレクタは、同じクラス名を持つ複数の要素に対しても適用でき、柔軟です。

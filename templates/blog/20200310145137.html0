@@ -1,0 +1,120 @@
+<h2>jQueryでテキストフィールドの変更検知 - インクリメンタルサーチの基礎</h2>
+
+jQueryでテキストフィールドの変更を検知する方法です。インクリメンタルサーチを実装する場合に、基礎となる知識です。
+
+inputイベントを使うと、テキストが変更されたことを検知できます。
+
+<h3>jQueryでテキストフィールドの変更を検知するサンプル</h3>
+
+jQueryでテキストフィールドの変更を検知するサンプルです。テキストフィールドに入力すると「テキストフィールドが変更されました」と表示されます。
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    /* キーの入力を検知 */
+    $(document).on('input', '[name=foo]', function () {
+      var foo_text = $('[name=foo]').val();
+      $('.changed_text').text('変更検知:' + foo_text);
+    });
+  });
+</script>
+
+<div class="changed_text">
+  変更検知:
+</div>
+
+<input type="text" name="foo">
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    /* キーの入力を検知 */
+    $(document).on('input', '[name=foo]', function () {
+      var foo_text = $('[name=foo]').val();
+      $('.changed_text').text('変更検知:' + foo_text);
+    });
+  });
+</script>
+
+<div class="changed_text">
+  変更検知:
+</div>
+
+<input type="text" name="foo">
+</pre>
+
+<h3>テキストフィールドの変更で、次の文字が入力されている場合は待つ</h3>
+
+上記の方法は、入力されたときに、全てのinputイベントを拾ってしまいます。
+
+たとえば「木本」と打つと「ｋ」「き」「きｍ」「きも」「きもｔ」「きもと」「木本」と7回もイベントが、発生してしまいます。
+
+インクリメンタルサーチをするときに、たくさんのリクエストが送信されると、嫌ですね。
+
+どうすれば、少ない回数のリクエストが送信できるでしょうか。
+
+次のアルゴリズムを使います。
+
+1秒待って、次の入力が行われていなければ、検知する。次の入力が行われていないとは、文字の変更がないことをいいます。
+
+setTimeout関数と、クロージャー変数に以前の値を保存するために、クロージャーを使って、実装します。
+
+<script>
+  $(function () {
+    /* キーの入力を検知 */
+    $(document).on('input', '[name=foo_wait]', function () {
+      /* テキストフィールドの今の値をクロージャー変数に保存 */
+      var save_one_second_before_wait_text = $('[name=foo_wait]').val();
+      
+      /* クロージャーを実行 */
+      var closure = function () {
+        setTimeout(function () {
+          var foo_wait_text = $('[name=foo_wait]').val();
+          /* 以前の値と異なっていた場合に処理を実行 */
+          if (save_one_second_before_wait_text === foo_wait_text) {
+            $('.changed_text_wait').text('変更検知:' + foo_wait_text);
+          }
+        }, 1000);
+      };
+      closure();
+    });
+  });
+</script>
+
+<div class="changed_text_wait">
+  変更検知:
+</div>
+
+<input type="text" name="foo_wait">
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    /* キーの入力を検知 */
+    $(document).on('input', '[name=foo_wait]', function () {
+      /* テキストフィールドの今の値をクロージャー変数に保存 */
+      var save_one_second_before_wait_text = $('[name=foo_wait]').val();
+      
+      /* クロージャーを実行 */
+      var closure = function () {
+        setTimeout(function () {
+          var foo_wait_text = $('[name=foo_wait]').val();
+          /* 以前の値と異なっていた場合に処理を実行 */
+          if (save_one_second_before_wait_text === foo_wait_text) {
+            $('.changed_text_wait').text('変更検知:' + foo_wait_text);
+          }
+        }, 1000);
+      };
+      closure();
+    });
+  });
+</script>
+
+<div class="changed_text_wait">
+  変更検知:
+</div>
+
+<input type="text" name="foo_wait">
+</pre>

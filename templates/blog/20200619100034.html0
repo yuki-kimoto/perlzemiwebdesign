@@ -1,0 +1,31 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>white-space - CSS入門【CSS3対応】</h2>
+
+whilte-spaceを使うと、折り返しなどを調整できます。
+
+<h3>preで折り返す</h3>
+
+preで折り返す場合は以下の記事を参考にしてください。
+
+<ul>
+  <li><a href="/blog/20200620100034.html">preで折り返すには?</a></li>
+</ul>

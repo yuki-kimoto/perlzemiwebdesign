@@ -1,0 +1,88 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200328092718.html">
+        <span itemprop="name">HTML5</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+<h2>【HTML5】aタグ - ハイパーリンクを作成</h2>
+
+ハイパーリンクを作成するには<b>aタグ</b>を使用します。HTML・CSS入門のURLを指定したサンプルです。
+
+<a href="https://htmlcss.perlclub.net/">HTML・CSS入門</a>
+
+<pre>
+<a href="https://htmlcss.perlclub.net/">HTML・CSS入門</a>
+</pre>
+
+リンクされているテキストを、リンクテキストと呼びます。
+
+<h4>絶対パスでページを指定する</h4>
+
+「/」で始まる絶対パスを使用すると、同一サイト内のページにリンクを張ることができます。
+
+<a href="/blog/20200204092826.html">htmlタグ</a>
+
+<pre>
+<a href="/blog/20200204092826.html">htmlタグ</a>
+</pre>
+
+<h4>相対パスでページを指定する</h4>
+
+「/」で始まらない相対パスを使用すると、同一サイト内のページに相対パスで、リンクを張ることができます。
+
+<a href="20200204092826.html">htmlタグ</a>
+
+<pre>
+<a href="20200204092826.html">htmlタグ</a>
+</pre>
+
+相対パスでリンクすることもできますが、常に絶対パスでリンクするのがお勧めです。
+
+<h3>リンクをクリックしたときに、新しいウインドウを開く</h3>
+
+リンクをクリックしたときに、新しいウインドウを開くには「target="_blank"」を指定します。
+
+<a href="https://htmlcss.perlclub.net/" target="_blank">HTML・CSS入門</a>
+
+<pre>
+<a href="https://htmlcss.perlclub.net/" target="_blank">HTML・CSS入門</a>
+</pre>
+
+<h3>ページの力をリンク先のページに渡すハイパーリンク</h3>
+
+SEO対策において、aタグによるハイパーリンクは、極めて重要なものです。
+
+たとえば「焼肉のおいしい食べ方」というリンクを張るとします。
+
+<a href="/">焼肉のおいしい食べ方</a>
+
+すると、リンク先のページは「焼肉」「おいしい」「食べ方」というキーワードで強くなります。
+
+現在のページが持っている、「焼肉」「おいしい」「食べ方」という力を、リンク先のページに渡すイメージです。
+
+<h3>ページの力をリンク先のページに渡したくない場合</h3>
+
+ページの力をリンク先のページに渡したくない場合は「rel="nofollow"」を使用します。
+
+現在のページの「焼肉」という力を強くしたい場合は、リンク先に「焼肉」の力を渡したくありません。
+
+このような場合に「rel="nofollow"」を使用すると、現在のページの「焼肉」の力をリンク先のページに渡すのを防ぐことができます。
+
+<a rel="nofollow" href="/">焼肉のおいしい食べ方</a>
+
+<pre>
+<a rel="nofollow" href="/">焼肉のおいしい食べ方</a>
+</pre>

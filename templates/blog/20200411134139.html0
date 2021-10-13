@@ -1,0 +1,38 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200426085612.html">
+        <span itemprop="name">セレクタ</span>
+      </a>
+      <meta itemprop="position" content="3" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>* - 全称セレクタ - CSS入門【CSS3対応】</h2>
+
+「*」で表現される全称セレクタは、全てのタグに適用されるセレクタです。divタグ、pタグ、aタグなどすべてのタグのデフォルトとして、この値が設定されます。
+
+<pre>
+* {
+  margin:0;
+  padding:0;
+}
+</pre>
+
+全称セレクタは、<a href="/blog/20200125070617.html">スタイルシート(CSS)のデフォルトを設定</a>するのに便利です。

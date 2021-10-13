@@ -1,0 +1,67 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>font-weight - 文字を太字にする - CSS入門【CSS3対応】</h2>
+
+<b>文字を太字</b>にするには、「font-weight:bold;」をスタイルシート(CSS)で指定します。
+
+<span style="font-weight:bold;">太字</span>
+
+<pre>
+<span style="font-weight:bold;">太字</span>
+</pre>
+
+<h3>bタグとスタイルシート(CSS)の太字の使い分けは?</h3>
+
+<a href="/blog/20200221093554.html">bタグ</a>を使っても文字を太字にできます。本文の中で、ある文字だけを太字にしたい場合は、bタグは簡単です。
+
+こんにちは、ようこそ、<b>食べ放題</b>。
+
+<pre>
+こんにちは、ようこそ、<b>食べ放題</b>。
+</pre>
+
+<a href="/blog/20200226082049.html">divタグ</a>などで囲まれており、他の設定もスタイルシート(CSS)で行っている場合は「font-weight:bold;」を指定すると合わせて行えます。
+
+<style>
+  .foo {
+    font-weight:bold;
+    padding:10px 20px;
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="foo">
+  こんにちは
+</div>
+
+<pre>
+<style>
+  .foo {
+    font-weight:bold;
+    padding:10px 20px;
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="foo">
+  こんにちは
+</div>
+</pre>

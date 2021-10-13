@@ -1,0 +1,405 @@
+<h2>テーブルの作成方法をマスターする</h2>
+
+テーブルを作成するには<a href="/blog/20200321181042.html">tableタグ</a>、<a href="/blog/20200315094150.html">trタグ</a>、<a href="/blog/20200314094150.html">tdタグ</a>を使用します。
+
+<table>
+  <tr>
+    <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+  </tr>
+  <tr>
+    <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+  </tr>
+</table>
+
+<pre>
+<table>
+  <tr>
+    <td>1行1列</td>1行2列<td><td>1行3列</td>
+  </tr>
+  <tr>
+    <td>2行1列</td>2行2列<td><td>2行3列</td>
+  </tr>
+</table>
+</pre>
+
+tableタグの下に列を表現するtrタグを配置します。trタグの下に行を表現するtdタグを配置します。
+
+<h3>テーブルの項目に枠をつける</h3>
+
+テーブルの項目に枠をつけてみましょう。テーブルの項目に枠をつけるには、tdタグのスタイルシート(CSS)でborderを指定します。
+
+<style>
+  .waku td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+あれ、ボーダーが、離れていますね。ちょっと、テーブルっぽくないですね。
+
+<h3>テーブルの枠が離れているのを結合する</h3>
+
+テーブルの枠が離れているのを結合してみましょう。tableタグのスタイルシート(CSS)に「border-collapse:collapse;」を指定します。
+
+<style>
+  .waku_collapse table {
+    border-collapse:collapse;
+  }
+  .waku_collapse td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku_collapse">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse table {
+    border-collapse:collapse;
+  }
+  .waku_collapse td {
+    border:1px solid #ddd;
+  }
+</style>
+
+<div class="waku_collapse">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+よく見るテーブルの枠ができあがりました。
+
+<h3>テーブルの項目に適切なパディングを設定する</h3>
+
+テーブルの項目に適切なパディングを設定してみましょう。少し窮屈ですね。
+
+<style>
+  .waku_collapse_padding table {
+    border-collapse:collapse;
+  }
+  .waku_collapse_padding td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding table {
+    border-collapse:collapse;
+  }
+  .waku_collapse_padding td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+<h3>テーブルの幅を100%にする</h3>
+
+テーブルの幅を100%にしてみましょう。テーブルはブロック要素と思いきや、ブロック要素ではなく、テーブル要素という特別な要素です。デフォルトの幅は、項目がちょうど収まる幅に自動調整されるようになっています。
+
+テーブルの幅を100%にするにはtableタグのスタイルシート(CSS)に「width:100%;」を指定します。
+
+<style>
+  .waku_collapse_padding_100 table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100 td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding_100">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding_100 table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100 td {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+</style>
+
+<div class="waku_collapse_padding_100">
+  <table>
+    <tr>
+      <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+<h3>見出しを付ける</h3>
+
+テーブルに見出しを付けてみましょう。見出し用の<a href="/blog/20200311095039.html">thタグ</a>がありますので、これを使うとよいでしょう。
+
+<h4>1行目を見出しにする場合</h4>
+
+1行目を見出しにしてみましょう。見出し行は、背景色を変えて、太字にしています。thタグは、デフォルトで、テキストが中央よせになります。
+
+<style>
+  .waku_collapse_padding_100_head_1row table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1row td, .waku_collapse_padding_100_head_1row th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1row th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1row">
+  <table>
+    <tr>
+      <th>1行1列</th><th>1行2列</th><th>1行3列</th>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding_100_head_1row table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1row td, .waku_collapse_padding_100_head_1row th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1row th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1row">
+  <table>
+    <tr>
+      <th>1行1列</th><th>1行2列</th><th>1行3列</th>
+    </tr>
+    <tr>
+      <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+<h4>1列目を見出しにする場合</h4>
+
+1列目を見出しにしてみましょう。見出し行は、背景色を変えて、太字にしています。thタグは、デフォルトで、テキストが中央よせになります。
+
+<style>
+  .waku_collapse_padding_100_head_1col table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1col td, .waku_collapse_padding_100_head_1col th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1col th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1col">
+  <table>
+    <tr>
+      <th>1行1列</th><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <th>2行1列</th><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+
+<pre>
+<style>
+  .waku_collapse_padding_100_head_1col table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .waku_collapse_padding_100_head_1col td, .waku_collapse_padding_100_head_1col th {
+    border:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .waku_collapse_padding_100_head_1col th {
+    font-weight:bold;
+    background:#eee;
+  }
+</style>
+
+<div class="waku_collapse_padding_100_head_1col">
+  <table>
+    <tr>
+      <th>1行1列</th><td>1行2列</td><td>1行3列</td>
+    </tr>
+    <tr>
+      <th>2行1列</th><td>2行2列</td><td>2行3列</td>
+    </tr>
+  </table>
+</div>
+</pre>
+
+<h3>項目の幅を指定する</h3>
+
+見出し項目は小さな幅で、その他は残りの幅を使いたいという場合がありますね。
+
+たとえば、会社情報を表示する場合を考え見ましょう。
+
+<style>
+  .corporate table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  .corporate td, .corporate th {
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    padding: 12px 20px 10px 20px;
+  }
+  .corporate th {
+    font-weight:bold;
+    background:#eee;
+    width:150px;
+  }
+</style>
+
+<div class="corporate">
+  <table>
+    <tr>
+      <th>商号</th>
+      <td>Perlクラブ（英語名Perl Club, Ltd.）</td>
+    </tr>
+    <tr>
+      <th>代表者</th>
+      <td>代表取締役　木本裕紀(きもと ゆうき)</td>
+    </tr>
+    <tr>
+      <th>本社</th>
+      <td>
+        〒105-0012<br>
+        東京都港区芝大門一丁目２番２３号 旭ビル３F
+      </td>
+    </tr>
+    <tr>
+      <th>事業内容</th>
+      <td>
+        Web サイトの企画・製作・運用<br>
+        Web システムの企画・設計・開発・運用<br>
+        システム開発・運用に関わるコンサルティング業務<br>
+        社内エンジニアの育成サポート<br>
+        プログラミング教室の企画・運営
+      </td>
+    </tr>
+    <tr>
+      <th>設立</th>
+      <td>令和2年1月14日</td>
+    </tr>
+    <tr>
+      <th>資本金</th>
+      <td>1,000,000円</td>
+    </tr>
+  </table>
+</div>
+
+<h3>スマートフォンサイトにおけるテーブルを使用する場合の注意</h3>
+
+スマートフォンサイトにおけるテーブルを使用する場合の注意です。現在のWebサイトは、スマートフォンからアクセスされることを前提とします。
+
+スマートフォンは、横幅は非常に小さいです。テーブルをスマートフォンに表示したときに、項目をどの位置に移動させるか、項目の幅をどのように設定するかということを、考えてデザインする必要があります。
+
+ユーザーが使いやすいインターフェースについて、個別に考える必要があるので、別の記事で、詳しく解説します。
+

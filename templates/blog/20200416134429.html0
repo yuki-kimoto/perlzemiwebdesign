@@ -1,0 +1,61 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200429173137.html">
+        <span itemprop="name">疑似クラス</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>first-child疑似クラス - CSS入門【CSS3対応】</h2>
+
+first-child疑似クラスは、自分の親から見て、最初の兄弟にスタイルを設定するための疑似的なクラスです。<a href="/blog/20200306145137.html">liタグ</a>と組み合わせて使われることが多いです。
+
+<style>
+  .my_list li:first-child {
+    background:#ddd;
+  }
+</style>
+
+<div class="my_list">
+  <ul>
+    <li>最初</li>
+    <li>次</li>
+    <li>最後</li>
+  </ul>
+</div>
+
+<pre>
+<style>
+  .my_list li:first-child {
+    background:#ddd;
+  }
+</style>
+
+<div class="my_list">
+  <ul>
+    <li>最初</li>
+    <li>次</li>
+    <li>最後</li>
+  </ul>
+</div>
+</pre>
+
+最初のliタグにだけスタイルが適用されます。

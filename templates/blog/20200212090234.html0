@@ -1,0 +1,319 @@
+<h2>フレックスレイアウト入門</h2>
+
+HTML5とCSS3のフレックスレイアウトを使ったレイアウト入門です。
+
+この記事の目標は、フレックスレイアウトを理解して使えるようになることです。
+
+補助的な目標として、フレックスレイアウトのバグを踏む機能を使わないで、シンプルにデザインできることを目指します。フレックスレイアウトは、ブラウザ間のバグが多いので、それを踏まないようにします。
+
+基本的な方針としては、幅を指定するときは常に、widthを使います。widthは、確定的に計算されるためでしょうか、ブラウザ間の互換性が高いです。calcの割り算は使いません。
+利便性と可読性とポータビリティとシンプルさの最適なバランスが目標です。
+
+<h3>divによるブロック要素の動作</h3>
+
+まず最初にフレックスレイアウトの効果を見る前に、divによるブロック要素の動作を理解しておきましょう。
+
+<div style="background:#fee">
+  焼肉
+</div>
+
+<pre>
+<div style="background:#eef">
+  焼肉
+</div>
+</pre>
+
+ブロック要素は、横に100%、伸びます。まずこれを理解しておきましょう。divはブロック要素であり、デフォルトで、横に100%に伸びます。
+
+divのCSSのデフォルト値は、以下と考えてください。
+
+<pre>
+display:block;
+width:100%;
+</pre>
+
+<h3>フレックスレイアウトの指定</h3>
+
+フレックスレイアウト「display:flex」を指定します。どうなるでしょうか?
+
+<div style="background:#fee;display:flex;">
+  焼肉
+</div>
+
+<pre>
+<div style="background:#eef;display:flex;">
+  焼肉
+</div>
+</pre>
+
+あれ? 何も起こりませんね。
+
+実は「dispaly:flex」は「display:inline-block」や「display:inline」と異なり、要素自体に対しては何も起こらないのです。要素自体に対しては、「display:block」が指定されているのと同じと考えてください。
+
+「display:flex」は、子要素に対して、効果を持つと考えておきましょう。焼肉には、何かが効果があるらしいのだけれど、このままだと確認できませんね。
+
+<h3>フレックスレイアウトの子要素に対する効果</h3>
+
+子要素を追加して、フレックスレイアウトの効果を見てみましょう。フレックスレイアウトを使わない場合も比較としてみてみましょう。
+
+<h4>フレックスレイアウトなし</h4>
+
+フレックスレイアウトがない場合は、divはブロック要素なので、子要素も横幅が100%になります。
+
+<div style="background:#fee;">
+  <div style="background:red;">
+    焼肉
+  </div>
+  <div style="background:green;">
+    焼鳥
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;">
+  <div style="background:red;">
+    焼肉
+  </div>
+  <div style="background:green;">
+    焼鳥
+  </div>
+</div>
+</pre>
+
+<h4>フレックスレイアウトあり</h4>
+
+フレックスレイアウトにするとどうなるでしょうか? おや、キュキュッと左側につまりましたね。
+
+<div style="background:#fee;display:flex;">
+  <div style="background:red;">
+    焼肉
+  </div>
+  <div style="background:green;">
+    焼鳥
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;display:flex;">
+  <div style="background:red;">
+    焼肉
+  </div>
+  <div style="background:green;">
+    焼鳥
+  </div>
+</div>
+</pre>
+
+まるで子要素に「display:inline-block」を指定して、フロートで左寄せしたかのように見えますね。「overflow:hidden;」は、フロートを解除するためのものです。
+
+<div style="background:#fee;overflow:hidden;">
+  <div style="background:red;display:inline-block;float:left;">
+    焼肉
+  </div>
+  <div style="background:green;display:inline-block;float:left">
+    焼鳥
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;overflow:hidden;">
+  <div style="background:red;display:inline-block;float:left;">
+    焼肉
+  </div>
+  <div style="background:green;display:inline-block;float:left">
+    焼鳥
+  </div>
+</div>
+</pre>
+
+はたして違いはあるのでしょうか。フレックスレイアウトって、これを簡単に書くための構文なんでしょうか?
+
+<h3>子要素で最大の高さを持つ要素に他の要素の高さがそろえられる</h3>
+
+フレックスレイアウトの最大の嬉しいポイントは、子要素で最大の高さを持つ要素に他の要素の高さがそろえられるということです。
+
+言葉で、書いても難しいので見てみましょう。片方の要素に改行を入れてみます。
+
+<h4>フレックスレイアウト</h4>
+
+おお、高さがそろいました。
+
+<div style="background:#fee;display:flex;">
+  <div style="background:red;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;">
+    焼鳥
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;display:flex;">
+  <div style="background:red;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;">
+    焼鳥
+  </div>
+</div>
+</pre>
+
+たとえば、商品の画像とタイトルを並べたいときに、文字が改行してしまうかを気にしないでよくなります。
+
+<h4>インラインブロックとフロート</h4>
+
+おお、高さが、残念なことになっています。これは、きっと望んでいることではないですね。
+
+<div style="background:#fee;overflow:hidden;">
+  <div style="background:red;display:inline-block;float:left;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;display:inline-block;float:left">
+    焼鳥
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;overflow:hidden;">
+  <div style="background:red;display:inline-block;float:left;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;display:inline-block;float:left">
+    焼鳥
+  </div>
+</div>
+</pre>
+
+<h3>子要素の幅を設定する</h3>
+
+焼肉の部分と、焼鳥の部分に長さを設定してみましょう。焼肉の幅は、100pxにして、焼鳥の幅は、それ以外とします。
+
+<div style="background:#fee;display:flex;">
+  <div style="background:red;width:100px;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;width:calc(100% - 100px);">
+    焼鳥
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;display:flex;">
+  <div style="background:red;width:100px;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;width:calc(100% - 100px);">
+    焼鳥
+  </div>
+</div>
+</pre>
+
+要素が他にもあるとどうなるでしょう? 少し工夫がいります。要素が2個に増えたので、それぞれの数値を手動で、2で割ってあげましょう。
+
+<div style="background:#fee;display:flex;">
+  <div style="background:red;width:100px;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;width:calc(50% - 50px);">
+    焼鳥
+  </div>
+  <div style="background:yellow;width:calc(50% - 50px)">
+    サラダ
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;display:flex;">
+  <div style="background:red;width:100px;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;width:calc(50% - 50px);">
+    焼鳥
+  </div>
+  <div style="background:yellow;width:calc(50% - 50px)">
+    サラダ
+  </div>
+</div>
+</pre>
+
+ちょっと待って、あれっ「flex:1」を使えばいいんでないの? もちろんそうです。でも「flex:1」には、ブラウザ間で、動作が異なることがあるので、この記事では、バグを踏まない方法を解説しています。
+
+あれ、calcで割り算するときに「/ 2」すればいいのでは? calcで割り算を使うのは、ブラウザ間で、動作が異なることがあるので、バグを踏まないようにしています。
+
+<h3>子要素を逆順にする</h3>
+
+サイドバーを作成したい場合に、コンテンツの位置とサイドバーの位置を逆順にしたいという場合があります。
+
+このような場合は「flex-direction: row-reverse;」を使います。この設定は「display:flex」を指定した要素に対して行います。
+
+逆順になりましたね。
+
+<div style="background:#fee;display:flex;flex-direction:row-reverse;">
+  <div style="background:red;width:100px;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;width:calc(100% - 100px);">
+    焼鳥
+  </div>
+</div>
+
+<pre>
+<div style="background:#fee;display:flex;flex-direction:row-reverse;">
+  <div style="background:red;width:100px;">
+    焼肉<br>
+    No. 1
+  </div>
+  <div style="background:green;width:calc(100% - 100px);">
+    焼鳥
+  </div>
+</div>
+</pre>
+
+<h3>複数行のフレックスレイアウト</h3>
+
+複数行のフレックスレイアウトについては、以下の記事で解説しました。
+
+<a href="/blog/20200213070617.html">複数行のフレックスレイアウトをマスターする</a>
+
+<!--
+
+<h3>フレックスレイアウトって何が嬉しいの?</h3>
+
+最大の嬉しいポイントは、子要素の高さが、自動的にそろうことです。
+
+<h3>フレックスレイアウトって何が苦しいの?</h3>
+
+ブラウザ間のバグの宝庫です。これを踏まない知識が必要です。
+
+<h3>フレックスレイアウトのバグを踏まないために</h3>
+
+<h4>フレックスレイアウトの直接の子要素はでは、min-heightとmin-widthは使わない</h4>
+
+IE11にバグがあります。
+
+<h4>フレックスレイアウトの直接の子要素はdiv要素にする</h4>
+
+imgタグ、buttonタブ、fieldsetタグなど、div以外の要素を指定すると、Edge / FF / Safariでバグがあります。
+
+<h4>align-itemsを使わない</h4>
+
+IE11にバグがあります。
+
+<h4>flex-basisを使わない</h4>
+
+ブラウザ間、バグ多し。
+
+<h4>flex:1を使わない</h4>
+
+IE11でバグがあります。
+
+-->

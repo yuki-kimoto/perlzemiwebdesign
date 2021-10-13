@@ -1,0 +1,63 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>box-sizing - ボーダー幅・パディングをブロックの幅・高さの内側に収める - CSS入門【CSS3対応】</h2>
+
+<b>box-sizing</b>を使うと、ボーダー幅・パディングをブロックの幅・高さの内側に収めることができます。
+
+<style>
+  * {
+    box-sizing:content-box;
+  }
+</style>
+
+<pre>
+box-sizing:border-box;
+</pre>
+
+実際に違いを見てみましょう。「box-sizing:border-box;」を指定すると幅300pxの内側にボーダーとパディングが描画されるのに対して、指定がない場合は、幅300pxの外側にボーダーとパディングが描画されます。指定がある方が、はるかに直感的で、サイズ調整がしやすいですよね。
+
+<div style="width:300px;box-sizing:border-box;padding:30px;border:5px solid red">
+  「box-sizing: border-box;」指定あり
+</div>
+<br>
+<div style="width:300px;padding:30px;border:5px solid red">
+  「box-sizing: border-box;」指定なし
+</div>
+
+<pre>
+<div style="width:300px;box-sizing:border-box;padding:30px;border:5px solid red">
+  「box-sizing: border-box;」指定あり
+</div>
+<br>
+<div style="width:300px;padding:30px;border:5px solid red">
+  「box-sizing: border-box;」指定なし
+</div>
+</pre>
+
+
+「box-sizing:border-box;」を指定しておくほうが、サイズ調整がやりやすいので、<a href="/blog/20200125070617.html">スタイルシート(CSS)のデフォルトの設定</a>として、<a href="/blog/20200411134139.html">全称セレクタ</a>で指定しておきましょう。
+
+<pre>
+* {
+  box-sizing: border-box;
+}
+</pre>
+

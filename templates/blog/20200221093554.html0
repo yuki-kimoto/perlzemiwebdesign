@@ -1,0 +1,54 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200328092718.html">
+        <span itemprop="name">HTML5</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+<h2>【HTML5】bタグ - 文字を太字にする</h2>
+
+bタグを使うと文字を文字を太字にできます。
+
+<b>太字</b>
+
+<pre>
+<b>太字</b>
+</pre>
+
+<h3>bタグにSEO対策の効果はありますか?</h3>
+
+これは、難しい質問です。
+
+HTML解析のアルゴリズムとしてのbタグは、評価の対象になっていないのではないかと想像します。
+
+ただし、google検索は、人がページを見て、そのページで満足したということに関しては、評価の対象としています。
+
+google検索は、検索結果の順位を、少しづつ、入れ替えながら、実際にユーザーがどのページで満足したかということを、調べています。
+
+bタグは、太字になるので、その部分が、目に入りやすいという効果があります。
+
+人の目から見たときに、わかりやすくなるように、使うとよいのではないでしょうか。
+
+<h3>文字の装飾にはCSSだけを使うべきではありませんか?</h3>
+
+文字の装飾にはCSSだけを使うべきという考え方もあります。
+
+<pre>
+<span style="font-weight:bold">太字</span>
+</pre>
+
+一方で、現実的には、bタグは、すべてのブラウザで、このCSSの設定を行います。また、この文字だけを強調したいというのは、利用頻度が高いです。
+
+PerlゼミのHTML・CSS入門では、現実的で、短く簡潔に書けることを目標にしています。

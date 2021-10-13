@@ -1,0 +1,49 @@
+<style>
+  .icons ul {
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .icons li {
+    list-style:none;margin-bottom:50px;
+    width:49%;
+    margin-right:1%;
+    text-align:center;
+  }
+  .icons img {
+    width:100%;
+    max-width:180px;
+  }
+</style>
+
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>パワーポイント ロゴ・アイコン集</h2>
+
+簡単なロゴ・アイコンは、パワーポイントで作れます。丸や四角など基本図形を組み合わせてロゴ・アイコンをデザインします。
+
+色の変更や微調整が自由自在の、パワーポイントサンプルをダウンロードできます。
+
+<div class="icons">
+  <ul>
+    <li><a href="/blog/20200131071759.html">Perlクラブのロゴ<br><img src="/images/powerpoint/powerpoint-kimoto-system-logo.png"></a></li>
+    <li><a href="/blog/20200130071759.html">Perlクラブのファビコン<br><img src="/images/powerpoint/powerpoint-kimoto-system-favicon.png"></a></li>
+    <li><a href="/blog/20200129071759.html">会社アイコン<br><img src="/images/powerpoint/powerpoint-company-icon.png"></a></li>
+    <li><a href="/blog/20200128071759.html">マップピンアイコン<br><img src="/images/powerpoint/powerpoint-mappin-icon.png"></a></li>
+    <li><a href="/blog/20200209101652.html">メニューアイコン<br><img src="/images/powerpoint/powerpoint-menu-icon.png"></a></li>
+    <li><a href="/blog/20200501112422.html">リンク矢印アイコン<br><img src="/images/powerpoint/powerpoint_link_arrow.png"></a></li>
+  </ul>
+</div>
+
+画像としての出力は、パワーポイントの図形要素を囲って、すべて選択して、図として保存で出力できます。

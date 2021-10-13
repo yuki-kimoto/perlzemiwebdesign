@@ -1,0 +1,62 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200328092718.html">
+        <span itemprop="name">HTML5</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+<h2>【HTML5】titleタグ - タイトルを書く</h2>
+
+titleタグを使うと、タイトルを記述することができます。
+
+<pre>
+<title>HTML・CSS入門</title>
+</pre>
+
+titleタグは、<a href="/blog/20200202092826.html">headタグ</a>の中に記述します。
+
+<pre>
+<html>
+  <head>
+    <title>HTML・CSS入門</title>
+  </head>
+  <body>
+    ...
+  </body>
+</html>
+</pre>
+
+タイトルは、ブラウザで見る場合の、ページのタイトルとして表示されます。
+
+googleなどの検索エンジンの、サイトリンクとして表示されるので、SEO対策として最重要なものです。
+
+titleタグ、descriptionタグ、keywordタグの重要度を、数値で比較すると「9 : 1 : 0 」と考えてください。
+
+それくらいタイトルは、重要です。32文字以内のタイトルのたった一行に、魂と心をこめます。
+
+<h3>サイトのタイトルをページタイトルの末尾に加えるには?</h3>
+
+各ページには、サイトのタイトルを末尾につけたいですね。
+
+このような場合は、HTMLをべた書きするのではなく、HTMLの静的構築ツールや、プログラミング言語とWebフレームワークというものを使います。
+
+<ol>
+  <li>HTMLの静的構築ツール</li>
+  <li>プログラミング言語とWebフレームワーク</li>
+</ol>
+
+Perlゼミでは、HTMLの静的構築ツールとして、<a href="https://giblog.perlclub.net/">Giblog</a>というツールを提供しています。
+
+また、プログラミング言語とWebフレームワークを使う方法として、<a href="https://webapp.perlzemi.com/">PerlとMojolicious</a>を使う方法を紹介しています。

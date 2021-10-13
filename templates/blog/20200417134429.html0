@@ -1,0 +1,67 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200426085612.html">
+        <span itemprop="name">セレクタ</span>
+      </a>
+      <meta itemprop="position" content="3" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>IDセレクタ - CSS入門【CSS3対応】</h2>
+
+<b>IDセレクタ</b>は、スタイルシート(CSS)を適用する要素のIDを指定するためのものです。
+
+IDセレクタは「#」で始め、適用したい要素のID名を指定します。「#menu」の部分がIDセレクタです。
+
+<pre>
+#menu {
+  color:red;
+}
+</pre>
+
+IDセレクタを使ってみましょう。
+
+<style>
+  #menu {
+    color:red;
+  }
+</style>
+
+<div id="menu">
+  焼肉
+</div>
+
+<pre>
+<style>
+  #menu {
+    color:red;
+  }
+</style>
+
+<div id="menu">
+  焼肉
+</div>
+</pre>
+
+<h3>IDセレクタとクラスセレクタのどちらを使うべきですか?</h3>
+
+基本的には、スタイルシート(CSS)の中では、<a href="/blog/20200422134429.html">クラスセレクタ</a>のみを使うのが、お勧めです。
+
+IDセレクタは、要素が一意である必要があるのに対し、クラスセレクタは、同じクラス名を持つ複数の要素に対しても適用でき、柔軟です。

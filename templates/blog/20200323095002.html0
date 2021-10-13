@@ -1,0 +1,322 @@
+<h2>【HTML5】チェックボックス - 複数選択のためのフォーム部品</h2>
+
+チェックボックスは、項目を複数選択するためのフォーム部品です。inputタグで「type="checkbox"」を指定します。
+
+  <b>メニュー</b>
+  <input type="checkbox" name="food" value="1">焼肉
+  <input type="checkbox" name="food" value="2">ラーメン
+  <input type="checkbox" name="food" value="3">フレッシュサラダ
+  <input type="checkbox" name="food" value="4">100%オレンジジュース
+
+<pre>
+<b>メニュー</b>
+<input type="checkbox" name="food" value="1">焼肉
+<input type="checkbox" name="food" value="2">ラーメン
+<input type="checkbox" name="food" value="3">フレッシュサラダ
+<input type="checkbox" name="food" value="4">100%オレンジジュース
+</pre>
+
+項目を選択することができます。フォーム部品なので、name属性で、名前を付けておくことが一般的です。チェックボックスは、項目のラベルの部分は含まず、選択部分だけが、チェックボックスであることに注意してください。
+
+サーバーに送信したい値はvalue属性に指定します。
+
+チェックボックスは、<a href="/blog/20200316094150.html">ラジオボタン</a>と見た目は似ていますが、複数選択できる点が異なります。
+
+<h3>チェックボックスは、インラインブロック要素</h3>
+
+チェックボックスは、デフォルトで、インラインブロック要素です。インラインブロック要素なので、左側に流れます。
+
+<div>
+  <b>メニュー</b>
+  <input type="checkbox" name="food" value="1">焼肉
+  <input type="checkbox" name="food" value="2">ラーメン
+  <input type="checkbox" name="food" value="3">フレッシュサラダ
+  <input type="checkbox" name="food" value="4">100%オレンジジュース
+</div>
+
+<pre>
+  <b>メニュー</b>
+  <input type="checkbox" name="food" value="1">焼肉
+  <input type="checkbox" name="food" value="2">ラーメン
+  <input type="checkbox" name="food" value="3">フレッシュサラダ
+  <input type="checkbox" name="food" value="4">100%オレンジジュース
+</pre>
+
+<h3>チェックボックスをあらかじめチェックする</h3>
+
+チェックボックスをあらかじめチェックしておきたいときは「checked="checked"」を指定します。
+
+  <b>メニュー</b>
+  <input type="checkbox" name="food" value="1" checked="checked">焼肉
+  <input type="checkbox" name="food" value="2">ラーメン
+  <input type="checkbox" name="food" value="3">フレッシュサラダ
+  <input type="checkbox" name="food" value="4">100%オレンジジュース
+
+<pre>
+<b>メニュー</b>
+<input type="checkbox" name="food" value="1" checked="checked">焼肉
+<input type="checkbox" name="food" value="2">ラーメン
+<input type="checkbox" name="food" value="3">フレッシュサラダ
+<input type="checkbox" name="food" value="4">100%オレンジジュース
+</pre>
+
+<h3>チェックボックスの各項目のラベルをクリックしたときにフォーカスを当てる</h3>
+
+チェックボックスそのものだけでなく、チェックボックスの各項目の見出しのラベルをクリックしたときに、フォーカスが当たるようにするにはlabelタグを使います。inputタグの中のid属性で指定した名前をlabelタグのfor属性に指定します。
+
+  <b>メニュー</b>
+  <input type="checkbox" name="food" id="food1" value="1"><label for="food1">焼肉</label>
+  <input type="checkbox" name="food" id="food2" value="2"><label for="food2">ラーメン</label>
+  <input type="checkbox" name="food" id="food3" value="3"><label for="food3">フレッシュサラダ</label>
+  <input type="checkbox" name="food" id="food4" value="4"><label for="food4">100%オレンジジュース</label>
+
+<pre>
+<b>メニュー</b>
+<input type="checkbox" name="food" id="food1" value="1"><label for="food1">焼肉</label>
+<input type="checkbox" name="food" id="food2" value="2"><label for="food2">ラーメン</label>
+<input type="checkbox" name="food" id="food3" value="3"><label for="food3">フレッシュサラダ</label>
+<input type="checkbox" name="food" id="food4" value="4"><label for="food4">100%オレンジジュース</label>
+</pre>
+
+それぞれのメニューラベルをクリックしてみてください。対応するチェックボックスが、フォーカスが当たり選択されます。
+
+<h3>フォーム送信時に、jQueryでフォームのチェックボックスの値を取得する</h3>
+
+送信ボタンを押したタイミングで、チェックボックスの値を取得する<a href="/blog/20200219091414.html">jQuery</a>を使ったサンプルです。ajaxでPOSTリクエストを送信するときに、よく使います。取得した内容を、alertで表示しています。
+
+<h4>フォームのすべての値を取得する方法</h4>
+
+フォームのすべての値を取得する方法です。
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-all .submit_button', function () {
+      
+      /* フォームのすべての値を取得する方法 */
+      var data = $(this).closest('form').serialize();
+      
+      alert(data);
+    });
+  });
+</script>
+
+<div class="form-text-field-all">
+  <form>
+    <b>メニュー</b>
+    <input type="checkbox" name="food" value="1">焼肉
+    <input type="checkbox" name="food" value="2">ラーメン
+    <input type="checkbox" name="food" value="3">フレッシュサラダ
+    <input type="checkbox" name="food" value="4">100%オレンジジュース
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-all .submit_button', function () {
+      
+      /* フォームのすべての値を取得する方法 */
+      var data = $(this).closest('form').serialize();
+      
+      alert(data);
+    });
+  });
+</script>
+
+<div class="form-text-field-all">
+  <form>
+    <b>メニュー</b>
+    <input type="checkbox" name="food" value="1">焼肉
+    <input type="checkbox" name="food" value="2">ラーメン
+    <input type="checkbox" name="food" value="3">フレッシュサラダ
+    <input type="checkbox" name="food" value="4">100%オレンジジュース
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+</pre>
+
+on('click')をdocumentから始めているのは、動的なHTMLの書き換えに対応するためです。ドキュメントトップからたどると、HTMLの部分が動的に書き換えられた場合も、正しく動作します。buttonに「type="button"」を指定しておくと、<a href="/blog/20200313095039.html">フォームのボタンのサブミットの動作がなくなくす</a>ことができます。
+
+<h4>指定したチェックボックスの値を取得する方法</h4>
+
+指定したチェックボックスの値を取得する方法です。メニューだけを取得しています。チェックでは、複数チェックされている可能性があるので、配列に保存しています。
+
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-part .submit_button', function () {
+      /* メニューを取得 */
+      var foods = [];
+      $(this).closest('form').find('[name=food]:checked').each(function () {
+        var food = $(this).val();
+        foods.push(food);
+      });
+      
+      alert(JSON.stringify(foods));
+    });
+  });
+</script>
+
+<div class="form-text-field-part">
+  <form>
+    <b>メニュー</b>
+    <input type="checkbox" name="food" value="1">焼肉
+    <input type="checkbox" name="food" value="2">ラーメン
+    <input type="checkbox" name="food" value="3">フレッシュサラダ
+    <input type="checkbox" name="food" value="4">100%オレンジジュース
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+
+<pre>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $(function () {
+    $(document).on('click', '.form-text-field-part .submit_button', function () {
+      /* メニューを取得 */
+      var foods = [];
+      $(this).closest('form').find('[name=food]:checked').each(function () {
+        var food = $(this).val();
+        foods.push(food);
+      });
+      
+      alert(JSON.stringify(foods));
+    });
+  });
+</script>
+
+<div class="form-text-field-part">
+  <form>
+    <b>メニュー</b>
+    <input type="checkbox" name="food" value="1">焼肉
+    <input type="checkbox" name="food" value="2">ラーメン
+    <input type="checkbox" name="food" value="3">フレッシュサラダ
+    <input type="checkbox" name="food" value="4">100%オレンジジュース
+    <button type="button" class="submit_button">送信</button>
+  </form>
+</div>
+</pre>
+
+<h3>チェックボックスをオリジナルのデザインにする</h3>
+
+チェックボックスは、マウスクリックであれば、使いやすいですが、スマートフォンでは、少し使いづらいという感じはします。
+
+チェックボックスを、オリジナルのデザインにしてみましょう。方法を解説します。
+
+1. チェックボックスにラベルを付ける
+
+2. チェックボックスを非表示にする
+
+3. 兄弟セレクタを使って、チェックを検知
+
+以下は、チェックボックスをオリジナルのデザインにするサンプルです。チェックされた項目にチェックマークがつきます。チェックマークの画像を使っています。チェックボックスに見えないですが、チェックボックスとして機能します。
+
+<style>
+  /* チェックボックスを非表示にする */
+  .original_checkbox input[type=checkbox] {
+    display:none;
+  }
+  
+  /* 選択されたチェックボックスの兄弟であるlabel */
+  .original_checkbox input[type=checkbox]:checked + label {
+    background:url(/images/checkbox/check.png) no-repeat;
+    background-size:15px;
+    background-position:15px 14px;
+  }
+  .original_checkbox {
+    display:flex;
+    flex-wrap:wrap;
+    width:300px;
+  }
+  .original_checkbox li {
+    width:100%;
+    border:1px solid #ddd;
+    border-bottom:none;
+  }
+  .original_checkbox li:first-child {
+    border-radius:5px 5px 0 0;
+  }
+  .original_checkbox li:last-child {
+    border-radius:0 0 5px 5px;
+    border-bottom:1px solid #ddd;
+  }
+  .original_checkbox label {
+    display:block;
+    width:100%;
+    padding:10px 0px 10px 40px;
+    cursor:pointer;
+  }
+</style>
+
+  <b>メニュー</b>
+  <ul class="original_checkbox">
+    <li>
+      <input type="checkbox" name="food" id="original_food1" value="1"><label for="original_food1">焼肉</label>
+    </li>
+    <li>
+      <input type="checkbox" name="food" id="original_food2" value="2"><label for="original_food2">ラーメン</label>
+    </li>
+    <li>
+      <input type="checkbox" name="food" id="original_food3" value="3"><label for="original_food3">フレッシュサラダ</label>
+    </li>
+    <li>
+      <input type="checkbox" name="food" id="original_food4" value="4"><label for="original_food4">100%オレンジジュース</label>
+    </li>
+  </ul>
+
+<pre>
+<style>
+  /* チェックボックスを非表示にする */
+  .original_checkbox input[type=checkbox] {
+    display:none;
+  }
+  
+  /* 選択されたチェックボックスの兄弟であるlabel */
+  .original_checkbox input[type=checkbox]:checked + label {
+    background:url(/images/checkbox/check.png) no-repeat;
+    background-size:15px;
+    background-position:15px 14px;
+  }
+  .original_checkbox {
+    display:flex;
+    flex-wrap:wrap;
+    width:300px;
+  }
+  .original_checkbox li {
+    width:100%;
+    border:1px solid #ddd;
+    border-bottom:none;
+  }
+  .original_checkbox li:first-child {
+    border-radius:5px 5px 0 0;
+  }
+  .original_checkbox li:last-child {
+    border-radius:0 0 5px 5px;
+    border-bottom:1px solid #ddd;
+  }
+  .original_checkbox label {
+    display:block;
+    width:100%;
+    padding:10px 0px 10px 40px;
+    cursor:pointer;
+  }
+</style>
+
+<b>メニュー</b>
+<ul class="original_checkbox">
+  <li>
+    <input type="checkbox" name="food" id="original_food1" value="1"><label for="original_food1">焼肉</label>
+  </li>
+  <li>
+    <input type="checkbox" name="food" id="original_food2" value="2"><label for="original_food2">ラーメン</label>
+  </li>
+  <li>
+    <input type="checkbox" name="food" id="original_food3" value="3"><label for="original_food3">フレッシュサラダ</label>
+  </li>
+  <li>
+    <input type="checkbox" name="food" id="original_food4" value="4"><label for="original_food4">100%オレンジジュース</label>
+  </li>
+</ul>
+</pre>

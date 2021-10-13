@@ -1,0 +1,68 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200328092718.html">
+        <span itemprop="name">HTML5</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+<h2>【HTML5】ulタグ - 番号なしリストを作成する</h2>
+
+ulタグを使用すると番号なしリストを作成できます。
+
+<pre>
+<ul></ul>
+</pre>
+
+番号なしリストに項目を追加するには、<a href="/blog/20200306145137.html">liタグ</a>を<b>ulタグ</b>の中に配置します。
+
+<ul>
+  <li>項目1</li>
+  <li>項目2</li>
+  <li>項目3</li>
+</ul>
+
+<pre>
+<ul>
+  <li>項目1</li>
+  <li>項目2</li>
+  <li>項目3</li>
+</ul>
+</pre>
+
+リストの項目にはデフォルトで、黒い丸が前につきます。
+
+<h3>リストの黒丸を消す</h3>
+
+リストの黒丸を消すにはスタイルシート(CSS)で「list-style:none;」を指定します。
+
+<ul>
+  <li style="list-style:none;">項目1</li>
+  <li style="list-style:none;">項目2</li>
+  <li style="list-style:none;">項目3</li>
+</ul>
+
+<pre>
+<ul>
+  <li style="list-style:none;">項目1</li>
+  <li style="list-style:none;">項目2</li>
+  <li style="list-style:none;">項目3</li>
+</ul>
+</pre>
+
+
+
+リストの詳しい作成方法については、以下の記事を参考にしてください。
+
+<a href="/blog/20200327122424.html">リストの作成方法をマスターする</a>

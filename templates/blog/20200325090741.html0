@@ -1,0 +1,98 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200328092718.html">
+        <span itemprop="name">HTML5</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+<h2>【HTML5】brタグ - 改行</h2>
+
+<b>brタグ</b>を使うと改行ができます。
+
+  こちら<br>
+  食べ放題。
+
+<pre>
+こちら<br>
+食べ放題。
+</pre>
+
+<h3>pタグとdivタグとbrタグの使い分けは?</h3>
+
+<a href="20200301092656.html">pタグ</a>や<a href="/blog/20200226082049.html">divタグ</a>を使っても改行ができますね。pタグとdivタグとbrタグの使い分けは、実際には、どんな感じでしょう?
+
+  <p>
+    こちら
+  </p>
+  <p>
+    食べ放題。
+  </p>
+
+<pre>
+  <p>
+    こちら
+  </p>
+  <p>
+    食べ放題。
+  </p>
+</pre>
+
+「それぞれを使い分けますか?」という質問には、はいと答えます。
+
+<h4>本文を書く場合はpタグ</h4>
+
+本文を書くような場合は、<a href="20200301092656.html">pタグ</a>を使います。
+
+  <p>
+    こんなお店で良かったのかな。
+  </p>
+  <p>
+    ええ、とても楽しかったわよ。
+  </p>
+
+<pre>
+<p>
+  こんなお店で良かったのかな。
+</p>
+<p>
+  ええ、とても楽しかったわよ。
+</p>
+</pre>
+
+<h4>ボタンやテーブルの項目などの中で改行はbrタグ</h4>
+
+ボタンやテーブルの項目など、本文ではないような場所で、改行したい場合は、<b>brタグ</b>を使うことがあります。
+
+<button>この<br>ボタン</button>
+
+<pre>
+<button>この<br>ボタン</button>
+</pre>
+
+<h4>テキストの装飾を変えたい場合はdivタグ</h4>
+
+テキストの装飾を変えたい場合は、<a href="/blog/20200226082049.html">divタグ</a>を使うことも多いです。
+
+<button>
+  <div style="color:red">この</div>
+  <div style="font-weight:bold;">ボタン</div>
+</button>
+
+<pre>
+<button>
+  <div style="color:red">この</div>
+  <div style="font-weight:bold;">ボタン</div>
+</button>
+</pre>

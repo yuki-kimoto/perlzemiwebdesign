@@ -1,0 +1,137 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200427085612.html">
+        <span itemprop="name">CSS</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+
+<h2>padding - パディングを設定する - CSS入門【CSS3対応】</h2>
+
+パディングを設定するには<b>padding</b>をスタイルシート(CSS)で設定します。パディングとは、ブロックの内側にできる間隔のことです。
+
+<div style="padding:10px;background:#eef">
+  パディングを設定
+</div>
+<br>
+<div style="background:#eef">
+  パディングなし
+</div>
+
+<pre>
+<div style="padding:10px;background:#eef">
+  パディングを設定
+</div>
+<br>
+<div style="background:#eef">
+  パディングなし
+</div>
+</pre>
+
+パディングがブロックの内側にできる間隔、<a href="/blog/20200409094600.html">マージン</a>がブロックの外側にできる間隔、です。
+
+<h4>パディングの効果</h4>
+
+パディングの効果は、適切な間隔を作ることで、文字を読みやすくすることです。
+
+<h4>上、右、下、左のそれぞれにパディングを設定</h4>
+
+上、右、下、左のそれぞれにパディングを設定できます。設定する順番は、上、右、下、左の順です。
+
+<div style="padding:10px 20px 30px 40px;background:#eef">
+  パディングを上、右、下、左のそれぞれに設定
+</div>
+
+<pre>
+<div style="padding:10px 20px 30px 40px;background:#eef">
+  パディングを上、右、下、左のそれぞれに設定
+</div>
+</pre>
+
+<h4>上下、左右のそれぞれにパディングを設定</h4>
+
+上下、左右のそれぞれにパディングを設定できます。設定する順番は、上下、左右の順です。
+
+<div style="padding:10px 30px;background:#eef">
+  パディングを上下、左右のそれぞれに設定
+</div>
+
+<pre>
+<div style="padding:10px 30px;background:#eef">
+  パディングを上下、左右のそれぞれに設定
+</div>
+</pre>
+
+<h4>上だけ、右だけ、下だけ、左だけにパディングを設定</h4>
+
+「padding-top」「padding-right」「padding-bottom」「padding-left」を使うと上だけ、右だけ、下だけ、左だけにパディングを設定することができます。
+
+<div style="padding-top:10px;background:#eef">
+  パディングを上だけ設定
+</div>
+<br>
+<div style="padding-right:10px;background:#eef;text-align:right;">
+  パディングを右だけ設定(テキスト右寄せ)
+</div>
+<br>
+<div style="padding-bottom:10px;background:#eef">
+  パディングを下だけ設定
+</div>
+<br>
+<div style="padding-left:10px;background:#eef">
+  パディングを左だけ設定
+</div>
+
+<pre>
+<div style="padding-top:10px;background:#eef">
+  パディングを上だけ設定
+</div>
+<br>
+<div style="padding-right:10px;background:#eef;text-align:right;">
+  パディングを右だけ設定(テキスト右寄せ)
+</div>
+<br>
+<div style="padding-bottom:10px;background:#eef">
+  パディングを下だけ設定
+</div>
+<br>
+<div style="padding-left:10px;background:#eef">
+  パディングを左だけ設定
+</div>
+</pre>
+
+<h3>文字の縦位置をちょうど真ん中にするには?</h3>
+
+文字の縦位置をちょうど真ん中にするには、上パディングをわずかに増やします。デフォルトは、フォントのベースラインが、基準になるので、日本語の場合は、やや上が狭いのです。フォントによって、微妙に異なるので、全ブラウザで、統一することは難しいですが、なるべくちょうど真ん中に合わせてみましょう。
+
+微妙な差が見えるでしょうか?
+
+<div style="padding:11px 20px 10px 20px;background:#eef">
+  文字の縦位置をちょうど真ん中にする
+</div>
+<br>
+<div style="padding:10px 20px 10px 20px;background:#eef">
+  デフォルトは、フォントのベースラインが、基準になるので、やや上が狭い
+</div>
+
+<pre>
+<div style="padding:11px 20px 10px 20px;background:#eef">
+  文字の縦位置をちょうど真ん中にする
+</div>
+<br>
+<div style="padding:10px 20px 10px 20px;background:#eef">
+  デフォルトは、フォントのベースラインが、基準になるので、やや上が狭い
+</div>
+</pre>

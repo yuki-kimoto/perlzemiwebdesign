@@ -1,0 +1,125 @@
+<h2>片側が固定長のメニューを作成する</h2>
+
+片側が固定長のメニューを作成する方法を解説します。HTML5とCSS3では、ウィンドウ幅を計算で求めることができるようになったので、これを利用します。メニューは、固定長のサイドバーの中にulタグを使って、表現します。
+
+<h3>片側が固定長のメニューの作成</h3>
+
+片側が固定長のメニューを作成してみましょう。メニューの幅は、200pxの固定長で右側に配置しています。左側のコンテンツは、自動的に伸長します。SEO対策も含めて考えた場合を考慮して、コンテンツを先に記述し、その後ろにメニューを記述するようにします。
+
+calcを使って、ウインドウ幅を計算しているのがポイントです。「display:flex」を使うと、クリアーフィックスなどのテクニックを使わないのでよいので楽です。IE11でも正しく描画されます。
+
+<style>
+  .sidefix_menu {
+    display:flex;
+  }
+  .sidefix_menu ul {
+    width:200px;
+    background:#afa
+  }
+  .sidefix_menu_main {
+    width:calc(100% - 200px);
+    background:#faf;
+  }
+</style>
+
+<div class="sidefix_menu">
+  <div class="sidefix_menu_main">
+    コンテンツ
+  </div>
+  <ul>
+    <li>カレー</li>
+    <li>りんご</li>
+    <li>焼肉</li>
+  </ul>
+</div>
+
+片側を固定長のメニューにするサンプルです。
+
+<pre>
+<style>
+  .sidefix_menu {
+    display:flex;
+  }
+  .sidefix_menu ul {
+    width:200px;
+    background:#afa
+  }
+  .sidefix_menu_main {
+    width:calc(100% - 200px);
+    background:#faf;
+  }
+</style>
+
+<div class="sidefix_menu">
+  <div class="sidefix_menu_main">
+    コンテンツ
+  </div>
+  <ul>
+    <li>カレー</li>
+    <li>りんご</li>
+    <li>焼肉</li>
+  </ul>
+</div>
+</pre>
+
+<h3>メニューの左右を入れ替えるには、どうすればよいですか?</h3>
+
+メニューの左右を入れ替えるには「display:flex」を指定した部分の下に「flex-flow: row-reverse;」を指定するだけです。
+
+SEO対策も含めて考えた場合を考慮して、メニューが左側に来る場合も、コンテンツを先に記述し、その後ろにメニューを記述するようにします。メニューよりも、そのページのコンテンツが、SEO対策にとってはるかに重要だからです。
+
+<style>
+  .sidefix_menu_reverse {
+    display:flex;
+    flex-flow:row-reverse;
+  }
+  .sidefix_menu_reverse ul {
+    width:200px;
+    background:#afa
+  }
+  .sidefix_menu__reverse_main {
+    width:calc(100% - 200px);
+    background:#faf;
+  }
+</style>
+
+メニューの左右を入れ替えるサンプルです。
+
+<div class="sidefix_menu_reverse">
+  <div class="sidefix_menu__reverse_main">
+    コンテンツ
+  </div>
+  <ul>
+    <li>カレー</li>
+    <li>りんご</li>
+    <li>焼肉</li>
+  </ul>
+</div>
+
+<pre>
+<style>
+  .sidefix_menu_reverse {
+    display:flex;
+    flex-flow:row-reverse;
+  }
+  .sidefix_menu_reverse ul {
+    width:200px;
+    background:#afa
+  }
+  .sidefix_menu__reverse_main {
+    width:calc(100% - 200px);
+    background:#faf;
+  }
+</style>
+
+<div class="sidefix_menu_reverse">
+  <div class="sidefix_menu__reverse_main">
+    コンテンツ
+  </div>
+  <ul>
+    <li>カレー</li>
+    <li>りんご</li>
+    <li>焼肉</li>
+  </ul>
+</div>
+</pre>

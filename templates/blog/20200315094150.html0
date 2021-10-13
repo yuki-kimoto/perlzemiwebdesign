@@ -1,0 +1,74 @@
+<div class="bread">
+  <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/">
+        <span itemprop="name">Webデザイン</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a itemprop="item" href="/blog/20200328092718.html">
+        <span itemprop="name">HTML5</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li>
+      here
+    </li>
+  </ul>
+</div>
+<h2>【HTML5】trタグ - テーブルの行を作成する</h2>
+
+<b>trタグで</b>テーブルの行を作成できます。
+
+<pre>
+<tr>
+</tr>
+</pre>
+
+一般的には、列と項目を作成するために、trタグとtdタグをtableタグの下に配置します。
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  table td {
+    border:1px solid #ddd;
+    padding:7px;
+  }
+</style>
+<table>
+  <tr>
+    <td>1行1列</td><td>1行2列</td><td>1行3列</td>
+  </tr>
+  <tr>
+    <td>2行1列</td><td>2行2列</td><td>2行3列</td>
+  </tr>
+</table>
+
+<pre>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  table td {
+    border:1px solid #ddd;
+    padding:7px;
+  }
+</style>
+
+<table>
+  <tr>
+    <td>1行1列</td>1行2列<td><td>1行3列</td>
+  </tr>
+  <tr>
+    <td>2行1列</td>2行2列<td><td>2行3列</td>
+  </tr>
+</table>
+</pre>
+
+テーブルの具体的な作成方法については、以下の記事を参考にしてください。
+
+<a href="/blog/20200324095249.html">テーブルの作成方法をマスターする</a>
